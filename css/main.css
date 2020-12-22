@@ -51,17 +51,20 @@ a:hover span {
 #hometitle {
   font-family: Product Sans;
   font-size: 70pt;
-  width:90%;
+  width:100%;
+  overflow:hidden;
   white-space: nowrap;
-  padding-left: 130%;
+  
 }
 
 @keyframes animate {
   100% {
-    transform: translate(-330%, 0);
+    transform: translate(-100%, 0);
   }
 }
 
 #hometitle div {
+  padding-left: 100%;
   animation: animate 15s linear infinite;
+  display: inline-block;
 }
