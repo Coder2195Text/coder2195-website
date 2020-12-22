@@ -173,6 +173,6 @@ window.onload = () => {
   checkip();
   setup();
   blinkcolors();
-  changelang("jp")
+  changelang("en")
 };
 
