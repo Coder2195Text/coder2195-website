@@ -39,7 +39,13 @@ a:hover span {
   visibility: visible;
   opacity: 1;
 }
-
+#audcontrol {
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  left: 0%;
+  z-index: 5;
+}
 /* MARQUEE STUFF */
 
 #hometitle {

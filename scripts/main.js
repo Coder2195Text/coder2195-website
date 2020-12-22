@@ -1,36 +1,4 @@
 var blinkcolor;
-
-async function checkip() {
-  let res = await fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
-  let data = await res.text();
-  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
-  let ip = data.match(ipRegex)[0];
-  ip = ip.toString();
-  // ban if IP doesnt match
-  if (ip !== "74.71.211.152") {
-    document.write(
-      "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
-    );
-  }
-}
-
-function setup() {
-  $("body").css("visibility", "visible");
-  //hide certain elements
-  $("#snap").css("display", "none");
-  $("#python").css("display", "none");
-  $("#other").css("display", "none");
-  //show certain elements
-  $("#audcontrol").css("display", "block");
-  $("#home").css("display", "block");
-  $("#bar").css("display", "block");
-}
-
-/*!lang: english (en), chinese (ch), french (fr), spanish (sp) 
- portuguese (pt), dutch (nl), german (de), arabic (ar)
- russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el)
-*/
-
 const langdata = {
   head: {
     title: {
@@ -115,10 +83,44 @@ const langdata = {
   }
 };
 
+async function checkip() {
+  let res = await fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
+  let data = await res.text();
+  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
+  let ip = data.match(ipRegex)[0];
+  ip = ip.toString();
+  // ban if IP doesnt match
+  if (ip !== "74.71.211.152") {
+    document.write(
+      "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
+    );
+  }
+}
+
+function setup() {
+  $("body").css("visibility", "visible");
+  //hide certain elements
+  $("#snap").css("display", "none");
+  $("#python").css("display", "none");
+  $("#other").css("display", "none");
+  //show certain elements
+  $("#audcontrol").css("display", "block");
+  $("#home").css("display", "block");
+  $("#bar").css("display", "block");
+}
+
+/*!lang: english (en), chinese (ch), french (fr), spanish (sp) 
+ portuguese (pt), dutch (nl), german (de), arabic (ar)
+ russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el)
+*/
+
+
+
 function changelang(currentlang) {
   document.title = langdata["head"]["title"][currentlang];
   //change title!
-  $("hometitle").text(langdata["titles"]["welcome"][currentlang]);
+  console.log($("#hometitle").text())
+  $("#hometitled").text(langdata["titles"]["welcome"][currentlang])
   //change "welcome to my site" to their language
 }
 
@@ -171,5 +173,6 @@ window.onload = () => {
   checkip();
   setup();
   blinkcolors();
+  changelang("jp")
 };
 
