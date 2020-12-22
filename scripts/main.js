@@ -1,3 +1,5 @@
+var blinkcolor;
+
 async function checkip() {
   let res = await fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
   let data = await res.text();
@@ -13,7 +15,7 @@ async function checkip() {
 }
 
 function setup() {
-  $('body').css('visibility', 'visible')
+  $("body").css("visibility", "visible");
   //hide certain elements
   $("#snap").css("display", "none");
   $("#python").css("display", "none");
@@ -120,7 +122,54 @@ function changelang(currentlang) {
   //change "welcome to my site" to their language
 }
 
+function blinkcolors() {
+  const colors = [
+    "red",
+    "orangered",
+    "orange",
+    "gold",
+    "yellow",
+    "greenyellow",
+    "lime",
+    "mediumseagreen",
+    "seagreen",
+    "green",
+    "Teal",
+    "LightSeaGreen",
+    "turquoise",
+    "cyan",
+    "LightSkyBlue",
+    "DeepSkyBlue",
+    "DodgerBlue",
+    "blue",
+    "MediumSlateBlue",
+    "blueviolet",
+    "purple",
+    "MediumOrchid",
+    "DeepPink",
+    "hotpink",
+    "Magenta",
+    "pink",
+    "LightCoral"
+  ];
+  if (blinkcolor == undefined) {
+    blinkcolor = 0;
+    // this variable is undefined also 0
+  } else {
+    blinkcolor += 1;
+    //change blinkcolor
+    if (blinkcolor == colors.length) {
+      blinkcolor = 0;
+      //overflow... set back to zero
+    }
+  }
+  $('#hometitle').css("color", colors[blinkcolor]);
+  setTimeout(blinkcolors, 200);
+}
+
 window.onload = () => {
   checkip();
   setup();
+  blinkcolors();
 };
+
