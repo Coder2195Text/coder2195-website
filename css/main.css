@@ -2,6 +2,10 @@
   font-family: "Product Sans";
   src: url("../fonts/productsans.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Snap";
+  src: url("../fonts/snap.ttf") format("truetype");
+}
 body {
   text-align: center;
   background-image: url("../img/lines-of-code.jpg");
@@ -105,6 +109,17 @@ a:hover span {
   border: none;
   height: 10px;
   background-color: black;
+}
+#lang-select{
+  width: 90%;
+  height: 30px;
+  font-family: Product Sans;
+  font-size: 15pt;
+  bottom: 100px
+}
+#home-snap{
+  font-family: Snap;
+  font-size: 30pt;
 }
 
 

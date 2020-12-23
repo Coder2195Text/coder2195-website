@@ -118,6 +118,7 @@ function changelang(currentlang) {
   //change title!
   $("#home-title div").text(langdata["titles"]["welcome"][currentlang]);
   //change "welcome to my site" to their language
+  $("#home-snap").text(langdata["titles"]["snap"][currentlang]);
 }
 
 let currentColor = 0;
@@ -134,3 +135,8 @@ window.onload = () => {
   changelang("en");
   changeColor();
 };
+$("#lang-select")
+  .change(function () {
+  changelang($("#lang-select").val())
+})
+  .change();
