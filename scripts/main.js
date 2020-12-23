@@ -108,7 +108,7 @@ function setup() {
   $("#python").css("display", "none");
   $("#other").css("display", "none");
   //show certain elements
-  $("#audcontrol").css("display", "block");
+  $("#settings").css("display", "block");
   $("#home").css("display", "block");
   $("#bar").css("display", "block");
 }

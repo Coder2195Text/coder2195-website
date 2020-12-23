@@ -39,11 +39,12 @@ a:hover span {
   visibility: visible;
   opacity: 1;
 }
-#audcontrol {
+#settings {
   position: fixed;
   height: 60px;
   width: 60px;
-  left: 0%;
+  top: 2%;
+  left: 2%;
   z-index: 5;
 }
 /* MARQUEE STUFF */
