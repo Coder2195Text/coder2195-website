@@ -1,4 +1,8 @@
 var blinkcolor;
+/*!lang: english (en), chinese (ch), french (fr), spanish (sp) 
+ portuguese (pt), dutch (nl), german (de), arabic (ar)
+ russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el)
+*/
 const langdata = {
   head: {
     title: {
@@ -91,7 +95,7 @@ async function checkip() {
   ip = ip.toString();
   // ban if IP doesnt match
   if (ip !== "2603:7000") {
-    alert(ip)
+    alert(ip);
     document.write(
       "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
     );
@@ -110,18 +114,11 @@ function setup() {
   $("#bar").css("display", "block");
 }
 
-/*!lang: english (en), chinese (ch), french (fr), spanish (sp) 
- portuguese (pt), dutch (nl), german (de), arabic (ar)
- russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el)
-*/
-
-
-
 function changelang(currentlang) {
   document.title = langdata["head"]["title"][currentlang];
   //change title!
-  console.log($("#hometitle").text())
-  $("#hometitled").text(langdata["titles"]["welcome"][currentlang])
+  console.log($("#hometitle").text());
+  $("#hometitled").text(langdata["titles"]["welcome"][currentlang]);
   //change "welcome to my site" to their language
 }
 
@@ -175,7 +172,7 @@ function blinkcolors() {
       //overflow... set back to zero
     }
   }
-  $('#hometitle').css("color", colors[blinkcolor]);
+  $("#hometitle").css("color", colors[blinkcolor]);
   setTimeout(blinkcolors, 200);
 }
 
@@ -183,6 +180,5 @@ window.onload = () => {
   checkip();
   setup();
   blinkcolors();
-  changelang("en")
+  changelang("ko");
 };
-
