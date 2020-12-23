@@ -116,7 +116,6 @@ function setup() {
 function changelang(currentlang) {
   document.title = langdata["head"]["title"][currentlang];
   //change title!
-  console.log($("#hometitle").text());
   $("#home-title div").text(langdata["titles"]["welcome"][currentlang]);
   //change "welcome to my site" to their language
 }
