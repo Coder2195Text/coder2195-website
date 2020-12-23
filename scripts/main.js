@@ -94,8 +94,7 @@ async function checkip() {
   let ip = data.match(ipRegex)[0];
   ip = ip.toString();
   // ban if IP doesnt match
-  if (ip !== "2603:7000") {
-    alert(ip);
+  if (ip !== "74.71.211.152") {
     document.write(
       "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
     );
@@ -180,5 +179,5 @@ window.onload = () => {
   checkip();
   setup();
   blinkcolors();
-  changelang("ko");
+  changelang("en");
 };
