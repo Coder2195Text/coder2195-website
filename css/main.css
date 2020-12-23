@@ -18,6 +18,10 @@ body {
 a {
   position: relative;
   display: inline-block;
+  text-decoration: none;
+}
+a:hover{
+  font-weight: 1000;
 }
 a span {
   visibility: hidden;
