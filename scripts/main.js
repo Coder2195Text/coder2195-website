@@ -2,6 +2,7 @@
  portuguese (pt), dutch (nl), german (de), arabic (ar)
  russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el)
 */
+var ls = window.localStorage;
 const langdata = {
   head: {
     title: {
@@ -111,6 +112,7 @@ function setup() {
   $("#settings").css("display", "block");
   $("#home").css("display", "block");
   $("#bar").css("display", "block");
+  $("#lang-select").val(localStorage.getItem("lang"));
 }
 
 function changelang(currentlang) {
@@ -134,9 +136,13 @@ window.onload = () => {
   setup();
   changelang("en");
   changeColor();
+  checklang()
 };
-$("#lang-select")
-  .change(function () {
-  changelang($("#lang-select").val())
-})
-  .change();
+function checklang() {
+  $("#lang-select")
+    .change(function() {
+      changelang($("#lang-select").val());
+      ls.setItem("lang", $("#lang-select").val());
+    })
+    .change();
+}
