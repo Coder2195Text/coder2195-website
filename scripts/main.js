@@ -117,7 +117,7 @@ function changelang(currentlang) {
   document.title = langdata["head"]["title"][currentlang];
   //change title!
   console.log($("#hometitle").text());
-  $("#hometitled").text(langdata["titles"]["welcome"][currentlang]);
+  $("#home-title div").text(langdata["titles"]["welcome"][currentlang]);
   //change "welcome to my site" to their language
 }
 
@@ -168,10 +168,10 @@ function blinkcolors() {
     //change blinkcolor
     if (blinkcolor == colors.length) {
       blinkcolor = 0;
-      //overflow... set back to zero
+      //overflow of colors... set back to zero
     }
   }
-  $("#hometitle").css("color", colors[blinkcolor]);
+  $("#home-title").css("color", colors[blinkcolor]);
   setTimeout(blinkcolors, 200);
 }
 
