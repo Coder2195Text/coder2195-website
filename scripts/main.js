@@ -1,4 +1,3 @@
-var blinkcolor;
 /*!lang: english (en), chinese (ch), french (fr), spanish (sp) 
  portuguese (pt), dutch (nl), german (de), arabic (ar)
  russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el)
@@ -94,8 +93,8 @@ async function checkip() {
   let ip = data.match(ipRegex)[0];
   ip = ip.toString();
   // ban if IP doesnt match
-  if (ip !== "74.71.211.152" /*ipv4*/ || ip !== "2603:7000" /*ipv6*/) {
-    alert(ip)
+  if (!(ip == "74.71.211.152" /*ipv4*/ || ip == "2603:7000") /*ipv6*/) {
+    console.log(ip);
     document.write(
       "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
     );
@@ -121,63 +120,17 @@ function changelang(currentlang) {
   //change "welcome to my site" to their language
 }
 
-function blinkcolors() {
-  const colors = [
-    "hsl(0, 100%, 50%)",
-    "hsl(10, 100%, 50%)",
-    "hsl(20, 100%, 50%)",
-    "hsl(30, 100%, 50%)",
-    "hsl(40, 100%, 50%)",
-    "hsl(50, 100%, 50%)",
-    "hsl(60, 100%, 50%)",
-    "hsl(70, 100%, 50%)",
-    "hsl(80, 100%, 50%)",
-    "hsl(90, 100%, 50%)",
-    "hsl(100, 100%, 50%)",
-    "hsl(110, 100%, 50%)",
-    "hsl(120, 100%, 50%)",
-    "hsl(130, 100%, 50%)",
-    "hsl(140, 100%, 50%)",
-    "hsl(150, 100%, 50%)",
-    "hsl(160, 100%, 50%)",
-    "hsl(170, 100%, 50%)",
-    "hsl(180, 100%, 50%)",
-    "hsl(190, 100%, 50%)",
-    "hsl(200, 100%, 50%)",
-    "hsl(210, 100%, 50%)",
-    "hsl(220, 100%, 50%)",
-    "hsl(230, 100%, 50%)",
-    "hsl(240, 100%, 50%)",
-    "hsl(250, 100%, 50%)",
-    "hsl(260, 100%, 50%)",
-    "hsl(270, 100%, 50%)",
-    "hsl(280, 100%, 50%)",
-    "hsl(290, 100%, 50%)",
-    "hsl(300, 100%, 50%)",
-    "hsl(310, 100%, 50%)",
-    "hsl(320, 100%, 50%)",
-    "hsl(330, 100%, 50%)",
-    "hsl(340, 100%, 50%)",
-    "hsl(350, 100%, 50%)"
-  ];
-  if (blinkcolor == undefined) {
-    blinkcolor = 0;
-    // this variable is undefined also 0
-  } else {
-    blinkcolor += 1;
-    //change blinkcolor
-    if (blinkcolor == colors.length) {
-      blinkcolor = 0;
-      //overflow of colors... set back to zero
-    }
-  }
-  $("#home-title").css("color", colors[blinkcolor]);
-  setTimeout(blinkcolors, 200);
+let currentColor = 0;
+function changeColor() {
+  currentColor += 1; // change
+  if (currentColor == 360) currentColor = 0;
+  $("#home-title").css("color", `hsl(${currentColor.toString()}, 100%, 50%)`);
+  setTimeout(changeColor, 10);
 }
 
 window.onload = () => {
   checkip();
   setup();
-  blinkcolors();
   changelang("en");
+  changeColor();
 };

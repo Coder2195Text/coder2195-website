@@ -20,7 +20,7 @@ a {
   display: inline-block;
   text-decoration: none;
 }
-a:hover{
+a:hover {
   font-weight: 1000;
 }
 a span {
@@ -56,10 +56,9 @@ a:hover span {
 #home-title {
   font-family: Product Sans;
   font-size: 70pt;
-  width:100%;
-  overflow:hidden;
+  width: 100%;
+  overflow: hidden;
   white-space: nowrap;
-  
 }
 
 @keyframes animate {
@@ -72,4 +71,22 @@ a:hover span {
   padding-left: 100%;
   animation: animate 15s linear infinite;
   display: inline-block;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(720deg);
+  }
+}
+#settings:hover img {
+  animation: spin 2s;
+}
+#setting-content {
+  display: none;
+  background-color: white;
+  width: 400%;
+  height: 400%;
+}
+#settings:hover #setting-content {
+  display: block;
 }
