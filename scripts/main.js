@@ -94,7 +94,8 @@ async function checkip() {
   let ip = data.match(ipRegex)[0];
   ip = ip.toString();
   // ban if IP doesnt match
-  if (ip !== "74.71.211.152") {
+  if (ip !== "74.71.211.152" /*ipv4*/ || ip !== "2603:7000" /*ipv6*/) {
+    alert(ip)
     document.write(
       "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
     );
