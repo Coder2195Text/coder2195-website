@@ -78,14 +78,14 @@ a:hover span {
     transform: rotate(720deg);
   }
 }
-#settings:hover img {
+#settings:hover #setting-icon {
   animation: spin 2s;
 }
 #setting-content {
   display: none;
   background-color: white;
-  width: 400%;
-  height: 1000%;
+  width: 500%;
+  height: auto;
   opacity: 1;
 }
 
@@ -100,6 +100,11 @@ a:hover span {
 #settings:hover #setting-content {
   display: block;
   animation: fadein 2s;
+}
+#settings hr{
+  border: none;
+  height: 10px;
+  background-color: black;
 }
 
 
