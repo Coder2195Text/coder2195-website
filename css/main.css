@@ -79,11 +79,11 @@ a:hover span {
 
 @keyframes spin {
   100% {
-    transform: rotate(720deg);
+    transform: rotate(1080deg);
   }
 }
 #settings:hover #setting-icon {
-  animation: spin 2s;
+  animation: spin 2.5s; 
 }
 #setting-content {
   display: none;

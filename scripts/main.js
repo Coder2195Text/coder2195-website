@@ -131,6 +131,18 @@ function changeColor() {
   setTimeout(changeColor, 10);
 }
 
+function checklang() {
+  $("#lang-select") 
+    .change(function() {
+    if ($("#lang-select").val() == null){
+      $("#lang-select").val("en")
+    }
+      changelang($("#lang-select").val());
+      ls.setItem("lang", $("#lang-select").val());
+    })
+    .change();
+}
+
 window.onload = () => {
   checkip();
   setup();
@@ -138,11 +150,3 @@ window.onload = () => {
   changeColor();
   checklang()
 };
-function checklang() {
-  $("#lang-select")
-    .change(function() {
-      changelang($("#lang-select").val());
-      ls.setItem("lang", $("#lang-select").val());
-    })
-    .change();
-}
