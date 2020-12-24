@@ -112,7 +112,11 @@ function setup() {
   $("#settings").css("display", "block");
   $("#home").css("display", "block");
   $("#bar").css("display", "block");
+  //get lang from localstorage
   $("#lang-select").val(localStorage.getItem("lang"));
+  //make a:hover work
+  $("a").css("hover", "font-weight: bold");
+  
 }
 
 function changelang(currentlang) {
