@@ -83,7 +83,7 @@ a:hover span {
   }
 }
 #settings:hover #setting-icon {
-  animation: spin 2.5s; 
+  animation: spin 2.5s;
 }
 #setting-content {
   display: none;
@@ -93,11 +93,11 @@ a:hover span {
   opacity: 1;
 }
 
-@keyframes fadein{
-  0%{
+@keyframes fadein {
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
@@ -105,20 +105,19 @@ a:hover span {
   display: block;
   animation: fadein 2s;
 }
-#settings hr{
+#settings hr {
   border: none;
   height: 10px;
   background-color: black;
 }
-#lang-select{
+select {
   width: 90%;
   height: 30px;
   font-family: Product Sans;
   font-size: 15pt;
-  bottom: 100px
+  bottom: 100px;
 }
-#home-snap{
+#home-snap {
   font-family: Snap;
   font-size: 30pt;
 }
-

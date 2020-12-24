@@ -6,22 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coder2195's Website</title>
     <link rel="icon" href="img/logo.ico" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../scripts/jquery.js"></script>
   </head>
-  <script src="../scripts/jquery.js"></script>
-  <link rel="stylesheet" href="../css/main.css" />
-  <body>  
-    <script>$('body').css('visibility', 'hidden')</script>
+  <body>
+    <script>
+      $("body").css("visibility", "hidden");
+    </script>
     <div id="settings">
-      <img src="/img/settings.png" alt="music" height="60px" width="60px" id="setting-icon">
+      <img
+        src="/img/settings.png"
+        alt="music"
+        height="60px"
+        width="60px"
+        id="setting-icon"
+      />
       <div id="setting-content">
-        <img src="/img/sound.png" alt="music" height="48px" width="48px">
-        <hr>
-        <img src="/img/language.png" alt="language" height="48px" width="48px"><br>
+        <img src="/img/sound.png" alt="music" height="48px" width="48px" />
+        <br />
+        <select id="music-select">
+          <option value="" id="no-music"></option>
+          <option
+            value="../snd/coffindance.mp3"
+            id="coffindance-music"
+          ></option>
+          <option value="../snd/calm.mp3" id="calm-music"></option>
+        </select>
+        <hr />
+        <img
+          src="/img/language.png"
+          alt="language"
+          height="48px"
+          width="48px"
+        /><br />
         <select id="lang-select">
-          <!--lang: e
- german (de), arabic (ar)
- russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el)
--->
           <option value="en">English</option>
           <option value="ch">中文</option>
           <option value="fr">Français</option>
@@ -36,16 +54,15 @@
           <option value="hi">हिंदी</option>
           <option value="el">Ελληνικά</option>
         </select>
-        <hr>
+        <hr />
       </div>
     </div>
     <div id="home">
       <h1 id="home-title">
-        <div>
-        </div>
-      </h1> 
+        <div></div>
+      </h1>
       <a id="home-snap" href="javascript: null"></a>
-      <br>
+      <br />
       <a id="home-python"></a>
     </div>
     <div id="snap">
@@ -60,6 +77,6 @@
     <div id="bar">
       6
     </div>
-    </body>
-  <script src="../scripts/main.js"></script>
+  </body>
+  <script type="module" src="../scripts/main.js"></script>
 </html>
