@@ -27,8 +27,6 @@ function setup() {
   $("#bar").css("display", "block");
   //get lang from localstorage
   $("#lang-select").val(localStorage.getItem("lang"));
-  //make a:hover work
-  $("a").css("hover", "font-weight: bold");
 }
 
 function changelang(currentlang) {
@@ -37,6 +35,13 @@ function changelang(currentlang) {
   $("#home-title div").text(langdata["titles"]["welcome"][currentlang]);
   //change "welcome to my site" to their language
   $("#home-snap").text(langdata["titles"]["snap"][currentlang]);
+  //change music select options to current lang
+  $("#no-music").text(langdata["music"]["no-music"][currentlang]);
+  $("#calm-music").text(langdata["music"]["calm"][currentlang]);
+  $("#coffindance-music").text(langdata["music"]["coffin-dance"][currentlang]);
+  $("#invisible-music").text(langdata["music"]["invisible"][currentlang]);
+  $("#custom-music").text(langdata["music"]["custom"][currentlang]);
+  $("#url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
 }
 
 let currentColor = 0;
@@ -59,10 +64,35 @@ function checklang() {
     .change();
 }
 
+function checkmusic() {
+  $("#music-select")
+    .change(function() {
+      if ($("#music-select").val() == "custom-music") {
+        $("#url-input").css("display", "inline-block");
+        $("#music").attr("src", "");
+      } else {
+        $("#url-input").css("display", "none");
+        $("#music").attr("src", $("#music-select").val());
+      }
+    })
+    .change();
+}
+function checkmusicurl() {
+  $("#url-input")
+    .change(function() {
+      if ($("#music-select").val() == "custom-music") {
+        $("#music").attr("src", $("#url-input").val());
+      }
+    })
+    .change();
+}
+
 window.onload = () => {
   checkip();
   setup();
   changelang("en");
   changeColor();
   checklang();
+  checkmusic();
+  checkmusicurl();
 };
