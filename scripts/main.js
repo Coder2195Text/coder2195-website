@@ -36,9 +36,9 @@ function changelang(currentlang) {
   //change "welcome to my site" to their language
   $("#home-snap").text(langdata["titles"]["snap"][currentlang]);
   //change music select options to current lang
-  $("#no-music").text(langdata["music"]["no-music"][currentlang]);
-  $("#calm-music").text(langdata["music"]["calm"][currentlang]);
+  $("#music-select option").text(langdata["music"]["no-music"][currentlang])[0];
   $("#coffindance-music").text(langdata["music"]["coffin-dance"][currentlang]);
+  $("#calm-music").text(langdata["music"]["calm"][currentlang]);
   $("#invisible-music").text(langdata["music"]["invisible"][currentlang]);
   $("#custom-music").text(langdata["music"]["custom"][currentlang]);
   $("#url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
