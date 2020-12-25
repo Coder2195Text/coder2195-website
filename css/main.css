@@ -6,6 +6,10 @@
   font-family: "Snap";
   src: url("../fonts/snap.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Python";
+  src: url("../fonts/python.ttf") format("truetype");
+}
 body {
   text-align: center;
   background-image: url("../img/lines-of-code.jpg");
@@ -113,7 +117,7 @@ a:hover span {
 select {
   width: 90%;
   height: 30px;
-  font-family: Product Sans;
+  font-family: Snap;
   font-size: 15pt;
   bottom: 100px;
 }
