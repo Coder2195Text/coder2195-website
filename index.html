@@ -24,7 +24,14 @@
       <div id="setting-content">
         <img src="/img/sound.png" alt="music" height="48px" width="48px" />
         <br />
-        <audio id="music" controls loop autoplay></audio>
+        <audio
+          id="music"
+          onloadeddata="$('#music').css('display', 'block')"
+          controls
+          loop
+          autoplay
+          src="hjcf.mp3"
+        ></audio>
         <select id="music-select">
           <option value=""></option>
           <option value="../snd/coffindance.mp3"></option>

@@ -22,7 +22,7 @@ function setup() {
   $("#python").css("display", "none");
   $("#other").css("display", "none");
   //show certain elements
-  $("#settings").css("display", "block");
+  $("#settings").css("display", "inline-block");
   $("#home").css("display", "block");
   $("#bar").css("display", "block");
   //get lang from localstorage
@@ -36,20 +36,30 @@ function changelang(currentlang) {
   //change "welcome to my site" to their language
   $("#home-snap").text(langdata["titles"]["snap"][currentlang]);
   //change music select options to current lang
-  $("#music-select option").text(langdata["music"]["no-music"][currentlang])[0];
-  $("#coffindance-music").text(langdata["music"]["coffin-dance"][currentlang]);
-  $("#calm-music").text(langdata["music"]["calm"][currentlang]);
-  $("#invisible-music").text(langdata["music"]["invisible"][currentlang]);
-  $("#custom-music").text(langdata["music"]["custom"][currentlang]);
+  $("#music-select option[value='']").text(
+    langdata["music"]["no-music"][currentlang]
+  );
+  $("#music-select option[value='../snd/coffindance.mp3']").text(
+    langdata["music"]["coffin-dance"][currentlang]
+  );
+  $("#music-select option[value='../snd/waterfall.mp3']").text(
+    langdata["music"]["calm"][currentlang]
+  );
+  $("#music-select option[value='../snd/invisible.mp3']").text(
+    langdata["music"]["invisible"][currentlang]
+  );
+  $("#music-select option[value='custom-music']").text(
+    langdata["music"]["custom"][currentlang]
+  );
   $("#url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
 }
 
 let currentColor = 0;
-function changeColor() {
+function changecolor() {
   currentColor += 1; // change
   if (currentColor == 360) currentColor = 0;
   $("#home-title").css("color", `hsl(${currentColor.toString()}, 100%, 50%)`);
-  setTimeout(changeColor, 10);
+  setTimeout(changecolor, 10);
 }
 
 function checklang() {
@@ -67,6 +77,7 @@ function checklang() {
 function checkmusic() {
   $("#music-select")
     .change(function() {
+      $("#music").css("display", "none");
       if ($("#music-select").val() == "custom-music") {
         $("#url-input").css("display", "inline-block");
         $("#music").attr("src", "");
@@ -82,16 +93,16 @@ function checkmusicurl() {
     .change(function() {
       if ($("#music-select").val() == "custom-music") {
         $("#music").attr("src", $("#url-input").val());
+        $("#music").css("display", "none");
       }
     })
     .change();
 }
-
 window.onload = () => {
   checkip();
   setup();
   changelang("en");
-  changeColor();
+  changecolor();
   checklang();
   checkmusic();
   checkmusicurl();
