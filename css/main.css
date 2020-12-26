@@ -91,13 +91,14 @@ a:hover span {
   }
 }
 #settings:hover #setting-icon {
-  animation: spin 2.5s;
+  animation: spin 2s;
 }
 #setting-content {
   display: none;
   background-color: white;
   width: 500%;
   height: auto;
+  overflow: auto;
   opacity: 1;
 }
 
