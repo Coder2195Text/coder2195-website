@@ -131,23 +131,3 @@ select {
   font-family: Snap;
   font-size: 30pt;
 }
-#home-stat img{
-  display: inline-block;
-}
-#home-stat div{
-  position: relative;
-  top: -120px; 
-  background-color: white;
-  display: none;
-  height: auto;
-  max-height: 500px;
-  width: auto;
-  max-width: 810px;
-  overflow: scroll;
-}
-#home-stat:hover img{
-  display:none;
-}
-#home-stat:hover div{
-  display:inline-block;
-}
