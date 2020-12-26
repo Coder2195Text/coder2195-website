@@ -27,6 +27,8 @@ function setup() {
   $("#bar").css("display", "block");
   //get lang from localstorage
   $("#lang-select").val(localStorage.getItem("lang"));
+  //hide certain elements that are in dev
+  $("#lang-select").val(localStorage.getItem("lang"));
 }
 
 function changelang(currentlang) {
