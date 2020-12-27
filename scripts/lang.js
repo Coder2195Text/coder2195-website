@@ -23,7 +23,7 @@ stuff: {
 export const langdata = {
   head: {
     title: {
-      en: "Coder2195's Website",
+      en: "Coder2195's website",
       ch: "Coder2195的网站",
       fr: "Site Web de Coder2195",
       sp: "Sitio web de Coder2195",
