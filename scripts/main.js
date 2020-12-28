@@ -1,6 +1,6 @@
 import { langdata } from "../scripts/lang.js";
 var ls = window.localStorage;
-function checkip() {
+async function checkip() {
   let res = await fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
   let data = await res.text();
   let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
