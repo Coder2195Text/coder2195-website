@@ -97,6 +97,7 @@ function checkmusic() {
       } else {
         $("#url-input").css("display", "none");
         $("#music").attr("src", $("#music-select").val());
+        $("#music").trigger('play')
       }
     })
     .change();
@@ -107,6 +108,7 @@ function checkmusicurl() {
       if ($("#music-select").val() == "custom-music") {
         $("#music").attr("src", $("#url-input").val());
         $("#music").css("display", "none");
+        $("#music").trigger('play')
       }
     })
     .change();
