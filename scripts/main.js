@@ -55,7 +55,7 @@ function changelang(currentlang) {
   $("#music-select option[value='../snd/fruitninjamusic.mp3']").text(
     langdata["music"]["fruitninja"][currentlang]
   );
-  $("#music-select option[value='custom']").text(
+  $("#music-select option[value='custom-music']").text(
     langdata["music"]["custom"][currentlang]
   );
   $("#url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
