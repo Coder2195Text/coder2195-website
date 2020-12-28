@@ -24,7 +24,7 @@
         <br />
         <audio
           id="music"
-          onloadeddata="$('#music').css('display', 'block')"
+          onloadeddata="$('#music').css('display', 'block'); $('#music').trigger('play')"
           controls
           loop
           autoplay
