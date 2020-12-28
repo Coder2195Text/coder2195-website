@@ -52,8 +52,8 @@ function changelang(currentlang) {
   $("#music-select option[value='../snd/invisible.mp3']").text(
     langdata["music"]["invisible"][currentlang]
   );
-  $("#music-select option[value='custom-music']").text(
-    langdata["music"]["custom"][currentlang]
+  $("#music-select option[value='../snd/fruitninjamusic.mp3']").text(
+    langdata["music"]["fruitninja"][currentlang]
   );
   $("#url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
   if (langdata["stat"]["support"][currentlang]){

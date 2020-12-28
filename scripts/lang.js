@@ -155,6 +155,22 @@ export const langdata = {
       el: "αόρατος",
       it: "Invisibile"
     },
+    fruitninja: {
+      en: "Fruit Ninja",
+      ch: "水果忍者",
+      fr: "Fruit Ninja",
+      sp: "Fruta Ninja",
+      pt: "Fruta Ninja",
+      nl: "Fruit Ninja",
+      de: "Fruchtninja",
+      ar: "نينجا الفاكهة",
+      ru: "Фруктовый ниндзя",
+      ko: "과일 닌자",
+      jp: "フルーツ忍者",
+      hi: "फ्रूट निंजा",
+      el: "νίντζα ​​φρούτων",
+      it: "Ninja della Frutta"
+    },
     custom: {
       en: "Custom URL",
       ch: "自定义网址",
