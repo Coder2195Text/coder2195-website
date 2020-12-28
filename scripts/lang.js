@@ -176,18 +176,18 @@ export const langdata = {
     support: {
       en: true,
       ch: true,
-      fr: "",
-      sp: "",
-      pt: "",
-      nl: "",
-      de: "",
-      ar: "",
-      ru: "",
-      ko: "",
-      jp: "",
-      hi: "",
-      el: "",
-      it: ""
-    }
+      fr: true,
+      sp: true,
+      pt: true,
+      nl: true,
+      de: true,
+      ar: false,
+      ru: true,
+      ko: true,
+      jp: true,
+      hi: true,
+      el: true,
+      it: true
+    },
   }
 };
