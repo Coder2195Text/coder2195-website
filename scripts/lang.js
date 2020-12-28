@@ -1,6 +1,6 @@
 /*!lang: english (en), chinese (ch), french (fr), spanish (sp) 
  portuguese (pt), dutch (nl), german (de), arabic (ar)
- russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el)
+ russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el), italian (it)
 */
 /*
 stuff: {
@@ -17,7 +17,8 @@ stuff: {
     ko: "",
     jp: "",
     hi: "",
-    el: ""
+    el: "",
+    it: ""
     }
   },*/
 export const langdata = {
@@ -35,24 +36,8 @@ export const langdata = {
       ko: "Coder2195의 웹 사이트",
       jp: "Coder2195のウェブサイト",
       hi: "Coder2195 की वेबसाइट",
-      el: "Ιστοσελίδα του Coder2195"
-    }
-  },
-  stuff: {
-    "null-for-copying": {
-      en: "",
-      ch: "",
-      fr: "",
-      sp: "",
-      pt: "",
-      nl: "",
-      de: "",
-      ar: "",
-      ru: "",
-      ko: "",
-      jp: "",
-      hi: "",
-      el: ""
+      el: "Ιστοσελίδα του Coder2195",
+      it: "Sito Web di Coder2195"
     }
   },
   titles: {
@@ -69,7 +54,8 @@ export const langdata = {
       ko: "내 웹 사이트에 오신 것을 환영합니다!",
       jp: "私のウェブサイトへようこそ!",
       hi: "मेरी वेबसाइट पर स्वागत है!",
-      el: "Καλώς ήλθατε στον ιστότοπό μου!"
+      el: "Καλώς ήλθατε στον ιστότοπό μου!",
+      it: "Benvenuto nel mio sito web!"
     },
     snap: {
       en: "My Snap Games",
@@ -84,7 +70,8 @@ export const langdata = {
       ko: "내 Snap 게임",
       jp: "私の Snap ゲーム",
       hi: "मेरे Snap खेल",
-      el: "Τα Snap παιχνίδια μου"
+      el: "Τα Snap παιχνίδια μου",
+      it: "I miei giochi Snap"
     },
     python: {
       en: "My Python Games",
@@ -99,7 +86,8 @@ export const langdata = {
       ko: "내 Python 게임",
       jp: "私の Python ゲーム",
       hi: "मेरे Python खेल",
-      el: "Τα Python παιχνίδια μου"
+      el: "Τα Python παιχνίδια μου",
+      it: "I miei giochi Python"
     }
   },
   music:{
@@ -116,7 +104,8 @@ export const langdata = {
       ko: "음악 없음",
       jp: "音楽なし",
       hi: "कोई संगीत नहीं",
-      el: "Χωρίς μουσική"
+      el: "Χωρίς μουσική",
+      it: "Nessuna musica"
     }, 
     "coffin-dance": {
       en: "Coffin Dance",
@@ -131,7 +120,8 @@ export const langdata = {
       ko: "관 댄스",
       jp: "棺ダンス",
       hi: "ताबूत नृत्य",
-      el: "χορός φέρετρου"
+      el: "χορός φέρετρου",
+      it: "Danza della Bara"
     }, 
     "nightwaterfall": {
       en: "Waterfall at Night",
@@ -146,7 +136,8 @@ export const langdata = {
       ko: "밤에 폭포",
       jp: "夜の滝",
       hi: "रात में झरना",
-      el: "Καταρράκτης τη νύχτα"
+      el: "Καταρράκτης τη νύχτα",
+      it: "Cascata di Notte"
     }, 
     "invisible": {
       en: "Invisible",
@@ -161,7 +152,8 @@ export const langdata = {
       ko: "보이지 않는",
       jp: "見えない",
       hi: "अदृश्य",
-      el: "αόρατος"
+      el: "αόρατος",
+      it: "Invisibile"
     },
     "custom": {
       en: "Custom URL",
@@ -176,7 +168,8 @@ export const langdata = {
       ko: "사용자 정의 URL",
       jp: "カスタムURL",
       hi: "कस्टम यूआरएल",
-      el: "προσαρμοσμένη διεύθυνση URL"
+      el: "προσαρμοσμένη διεύθυνση URL",
+      it: "URL personalizzato"
     },
   }
 };
