@@ -16,8 +16,6 @@
 }
 body {
   text-align: center;
-  background-image: url("../img/lines-of-code.jpg");
-  background-repeat: repeat;
   padding-bottom: 100px;
 }
 #bar {
@@ -131,4 +129,8 @@ select {
 #home-snap {
   font-family: Snap;
   font-size: 30pt;
+}
+#backdrop{
+  position: fixed;
+  top: 0%
 }
