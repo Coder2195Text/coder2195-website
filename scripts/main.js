@@ -1,6 +1,6 @@
 import { langdata } from "../scripts/lang.js";
 var ls = window.localStorage;
-async function checkip() {
+function checkip() {
   let res = await fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
   let data = await res.text();
   let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
@@ -54,6 +54,13 @@ function changelang(currentlang) {
     langdata["music"]["custom"][currentlang]
   );
   $("#url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
+  if (langdata["stat"]["support"][currentlang]){
+    $("#stat").attr("hidden", false)
+    $("#stat1").attr("src", "https://github-readme-stats.vercel.app/api?username=coder2195text&show_icons=true&theme=tokyonight&locale=" + langdata["stat"]["conlang"][currentlang])
+    $("#stat2").attr("src", "https://github-readme-stats.vercel.app/api/top-langs/?username=coder2195text&theme=merko&layout=compact&locale=" + langdata["stat"]["conlang"][currentlang])
+  } else {
+    $("#stat").attr("hidden", true)
+  }
 }
 
 let currentColor = 0;

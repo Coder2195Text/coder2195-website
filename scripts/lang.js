@@ -189,5 +189,21 @@ export const langdata = {
       el: true,
       it: true
     },
+    conlang: {
+      en: "en",
+      ch: "cn",
+      fr: "fr",
+      sp: "es",
+      pt: "pt-pt",
+      nl: "nl",
+      de: "de",
+      ar: null,
+      ru: "ru",
+      ko: "kr",
+      jp: "ja",
+      hi: "np",
+      el: "el",
+      it: "it"
+    }
   }
 };
