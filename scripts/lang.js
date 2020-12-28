@@ -107,7 +107,7 @@ export const langdata = {
       el: "Χωρίς μουσική",
       it: "Nessuna musica"
     }, 
-    "coffin-dance": {
+    coffindance: {
       en: "Coffin Dance",
       ch: "棺材舞",
       fr: "Danse du Cercueil",
@@ -123,7 +123,7 @@ export const langdata = {
       el: "χορός φέρετρου",
       it: "Danza della Bara"
     }, 
-    "nightwaterfall": {
+    nightwaterfall: {
       en: "Waterfall at Night",
       ch: "晚上的瀑布",
       fr: "Cascade de nuit",
@@ -139,7 +139,7 @@ export const langdata = {
       el: "Καταρράκτης τη νύχτα",
       it: "Cascata di Notte"
     }, 
-    "invisible": {
+    invisible: {
       en: "Invisible",
       ch: "无形",
       fr: "Invisible",
@@ -155,7 +155,7 @@ export const langdata = {
       el: "αόρατος",
       it: "Invisibile"
     },
-    "custom": {
+    custom: {
       en: "Custom URL",
       ch: "自定义网址",
       fr: "URL personnalisée",
@@ -170,6 +170,24 @@ export const langdata = {
       hi: "कस्टम यूआरएल",
       el: "προσαρμοσμένη διεύθυνση URL",
       it: "URL personalizzato"
-    },
+    }
+  },
+  stat: {
+    support: {
+      en: true,
+      ch: true,
+      fr: "",
+      sp: "",
+      pt: "",
+      nl: "",
+      de: "",
+      ar: "",
+      ru: "",
+      ko: "",
+      jp: "",
+      hi: "",
+      el: "",
+      it: ""
+    }
   }
 };

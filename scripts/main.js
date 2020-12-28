@@ -42,7 +42,7 @@ function changelang(currentlang) {
     langdata["music"]["no-music"][currentlang]
   );
   $("#music-select option[value='../snd/coffindance.mp3']").text(
-    langdata["music"]["coffin-dance"][currentlang]
+    langdata["music"]["coffindance"][currentlang]
   );
   $("#music-select option[value='../snd/waterfall.mp3']").text(
     langdata["music"]["nightwaterfall"][currentlang]
