@@ -32,6 +32,8 @@ function setup() {
 }
 
 function changelang(currentlang) {
+  $("#stat").attr("hidden", true)
+  // hide this first
   document.title = langdata["head"]["title"][currentlang];
   //change title!
   $("#home-title div").text(langdata["titles"]["welcome"][currentlang]);
@@ -55,12 +57,11 @@ function changelang(currentlang) {
   );
   $("#url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
   if (langdata["stat"]["support"][currentlang]){
-    $("#stat").attr("hidden", false)
+    //do stuff if it does support...
     $("#stat1").attr("src", "https://github-readme-stats.vercel.app/api?username=coder2195text&show_icons=true&theme=tokyonight&locale=" + langdata["stat"]["conlang"][currentlang])
     $("#stat2").attr("src", "https://github-readme-stats.vercel.app/api/top-langs/?username=coder2195text&theme=merko&layout=compact&locale=" + langdata["stat"]["conlang"][currentlang])
-  } else {
-    $("#stat").attr("hidden", true)
-  }
+    $("#stat").attr("hidden", false)
+  } 
 }
 
 let currentColor = 0;
