@@ -131,6 +131,9 @@ select {
   font-size: 30pt;
 }
 #backdrop{
+  width: 100%;
+  height: 100%;
   position: fixed;
-  top: 0%
+  top: 0%;
+  z-index: -1000;
 }
