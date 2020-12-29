@@ -99,6 +99,7 @@ a:hover span {
   height: auto;
   overflow: auto;
   opacity: 1;
+  max-height: 90vh;
 }
 
 @keyframes fadein {
