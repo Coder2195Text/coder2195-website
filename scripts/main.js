@@ -65,6 +65,7 @@ function changelang(currentlang) {
     $("#stat2").attr("src", "https://github-readme-stats.vercel.app/api/top-langs/?username=coder2195text&theme=merko&layout=compact&locale=" + langdata["stat"]["conlang"][currentlang])
     $("#stat").attr("hidden", false)
   } 
+  $("#wallpaper-select option[value='default']").text(langdata["wallpaper"]["default"][currentlang])
 }
 
 let currentColor = 0;

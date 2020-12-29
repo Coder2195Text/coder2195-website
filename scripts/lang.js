@@ -3,22 +3,22 @@
  russian (ru), korean (ko), japanese (jp), hindi (hi), greek (el), italian (it)
 */
 /*
-stuff: {
-  "null-for-copying": {
-    en: "",
-    ch: "",
-    fr: "",
-    sp: "",
-    pt: "",
-    nl: "",
-    de: "",
-    ar: "",
-    ru: "",
-    ko: "",
-    jp: "",
-    hi: "",
-    el: "",
-    it: ""
+  stuff: {
+    "null-for-copying": {
+      en: "",
+      ch: "",
+      fr: "",
+      sp: "",
+      pt: "",
+      nl: "",
+      de: "",
+      ar: "",
+      ru: "",
+      ko: "",
+      jp: "",
+      hi: "",
+      el: "",
+      it: ""
     }
   },*/
 export const langdata = {
@@ -141,19 +141,19 @@ export const langdata = {
     }, 
     invisible: {
       en: "Invisible",
-      ch: "无形",
-      fr: "Invisible",
-      sp: "Invisible",
-      pt: "Invisível",
-      nl: "Onzichtbaar",
-      de: "Unsichtbar",
-      ar: "غير مرئى",
-      ru: "Невидимый",
-      ko: "보이지 않는",
-      jp: "見えない",
-      hi: "अदृश्य",
-      el: "αόρατος",
-      it: "Invisibile"
+      ch: "隐形（英文）",
+      fr: "Invisible (anglais)",
+      sp: "Invisible (inglés)",
+      pt: "Invisível (Inglês)",
+      nl: "Onzichtbaar (Engels)",
+      de: "Unsichtbar (Englisch)",
+      ar: "غير مرئي (إنجليزي)",
+      ru: "Невидимый (английский)",
+      ko: "보이지 않음 (영어)",
+      jp: "見えない（英語）",
+      hi: "अदृश्य (अंग्रेजी)",
+      el: "Αόρατο (Αγγλικά)",
+      it: "Invisible (inglese)"
     },
     fruitninja: {
       en: "Fruit Ninja",
@@ -169,7 +169,7 @@ export const langdata = {
       jp: "フルーツ忍者",
       hi: "फ्रूट निंजा",
       el: "νίντζα ​​φρούτων",
-      it: "Ninja della Frutta"
+      it: "Fruit Ninja"
     },
     custom: {
       en: "Custom URL",
@@ -220,6 +220,24 @@ export const langdata = {
       hi: "np",
       el: "el",
       it: "it"
+    }
+  },
+  wallpaper: {
+    "default": {
+      en: "Default",
+      ch: "默认",
+      fr: "Défaut",
+      sp: "Defecto",
+      pt: "Padrão",
+      nl: "Standaard",
+      de: "Standard",
+      ar: "إفتراضي",
+      ru: "По умолчанию",
+      ko: "기본",
+      jp: "デフォルト",
+      hi: "चूक",
+      el: "Προκαθορισμένο",
+      it: "Predefinita"
     }
   }
 };
