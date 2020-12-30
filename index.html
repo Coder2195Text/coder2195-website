@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="../css/main.css" />
     <script src="../scripts/jquery.js"></script>
     <style>
-      body{
+      body div{
         display: none;
       }
     </style>
     </head>
   <body>
+    <div>
     <div id="settings">
       <img
         src="/img/settings.png"
@@ -111,7 +112,8 @@
       6
     </div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
-    <h1 style="display: block;">Your browser does not support javascript or javascript is disabled... Please get a better browser or enable javascript!<h1>
+    </div>
+    <h1 id="noscript" style="display: block;" onload="$('#noscript').css('display, none;')">Your browser does not support javascript or javascript is disabled... Please get a better browser or enable javascript!<h1>
   </body>
   <script>while($("body").css('display') == "none"){
     $("body").attr('style', "display:block")
