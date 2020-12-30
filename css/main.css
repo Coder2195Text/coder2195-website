@@ -120,7 +120,7 @@ a:hover span {
   background-color: black;
 }
 select {
-  width: 90%;
+  width: 75%;
   height: 60px;
   font-family: Select;
   font-size: 15pt;
