@@ -115,8 +115,10 @@ function checkmusicurl() {
     .change(function() {
       if ($("#music-select").val() == "custom-music") {
         if (check($("#music-url-input").val())){
+          alert(check($("#music-url-input").val()))
           $('#music').css('display', 'block');
         } else {
+          alert(check($("#music-url-input").val()))
           $('#music').css('display', 'none');
         }
       }
