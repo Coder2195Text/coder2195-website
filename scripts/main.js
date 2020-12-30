@@ -14,14 +14,6 @@ async function checkip() {
     );
   }
 }
-function check(url){
-  $.get(url)
-    .done(function() { 
-       return true
-    }).fail(function() { 
-       return false
-    })
-}
 
 function setup() {
   $("body").css("visibility", "visible");
@@ -114,13 +106,8 @@ function checkmusicurl() {
   $("#music-url-input")
     .change(function() {
       if ($("#music-select").val() == "custom-music") {
-        if (check($("#music-url-input").val())){
-          alert(check($("#music-url-input").val()))
-          $('#music').css('display', 'block');
-        } else {
-          alert(check($("#music-url-input").val()))
-          $('#music').css('display', 'none');
-        }
+        $("#music").attr("src", $("#music-url-input").val())
+        $("#music").css("display", "none")
       }
     })
     .change();
