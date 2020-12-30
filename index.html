@@ -112,6 +112,8 @@
     </div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
   </body>
-  <script>$("body").attr('style', "display:block")</script>
+  <script>while($("body").css('display') == "none"){
+    $("body").attr('style', "display:block")
+    }</script>
   <script type="module" src="../scripts/main.js"></script>
 </html>
