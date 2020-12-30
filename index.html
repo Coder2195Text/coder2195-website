@@ -26,6 +26,7 @@
         <audio
           id="music"
           controls
+          onerror="$('#music').css('display', 'none')"
           onloadeddata="$('#music').css('display', 'block')"
           loop
           autoplay

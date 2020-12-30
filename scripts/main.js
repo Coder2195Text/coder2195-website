@@ -107,7 +107,6 @@ function checkmusicurl() {
     .change(function() {
       if ($("#music-select").val() == "custom-music") {
         $("#music").attr("src", $("#music-url-input").val());
-        $("#music").css("display", "none");
       }
     })
     .change();
