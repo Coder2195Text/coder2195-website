@@ -14,8 +14,8 @@ async function checkip() {
     );
   }
 }
-function check(){
-  $.get(image_url)
+function check(url){
+  $.get(url)
     .done(function() { 
        return true
     }).fail(function() { 
