@@ -99,7 +99,7 @@ a:hover span {
   height: auto;
   overflow: auto;
   opacity: 1;
-  max-height: 90vh;
+  max-height: 75vh;
 }
 
 @keyframes fadein {
@@ -120,7 +120,7 @@ a:hover span {
   background-color: black;
 }
 select {
-  width: 75%;
+  width: 90%;
   height: 60px;
   font-family: Select;
   font-size: 15pt;
