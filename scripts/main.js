@@ -14,6 +14,14 @@ async function checkip() {
     );
   }
 }
+function check(){
+  $.get(image_url)
+    .done(function() { 
+       return true
+    }).fail(function() { 
+       return false
+    })
+}
 
 function setup() {
   $("body").css("visibility", "visible");
@@ -58,7 +66,7 @@ function changelang(currentlang) {
   $("#music-select option[value='custom-music']").text(
     langdata["music"]["custom"][currentlang]
   );
-  $("#url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
+  $("#music-url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
   if (langdata["stat"]["support"][currentlang]){
     //do stuff if it does support...
     $("#stat1").attr("src", "https://github-readme-stats.vercel.app/api?username=coder2195text&show_icons=true&theme=tokyonight&locale=" + langdata["stat"]["conlang"][currentlang])
@@ -93,21 +101,24 @@ function checkmusic() {
     .change(function() {
       $("#music").css("display", "none");
       if ($("#music-select").val() == "custom-music") {
-        $("#url-input").css("display", "inline-block");
+        $("#music-url-input").css("display", "inline-block");
         $("#music").attr("src", "");
       } else {
-        $("#url-input").css("display", "none");
+        $("#music-url-input").css("display", "none");
         $("#music").attr("src", $("#music-select").val());
       }
     })
     .change();
 }
 function checkmusicurl() {
-  $("#url-input")
+  $("#music-url-input")
     .change(function() {
       if ($("#music-select").val() == "custom-music") {
-        $("#music").attr("src", $("#url-input").val());
-        $("#music").css("display", "none");
+        if (check($("#music-url-input").val())){
+          $('#music').css('display', 'block');
+        } else {
+          $('#music').css('display', 'none');
+        }
       }
     })
     .change();
