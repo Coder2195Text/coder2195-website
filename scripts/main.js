@@ -112,7 +112,7 @@ function checkmusicurl() {
     .change();
 }
 window.onload = () => {
-  checkip();
+  //checkip();
   setup();
   changelang("en");
   changecolor();
