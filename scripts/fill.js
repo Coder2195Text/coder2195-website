@@ -1,5 +1,5 @@
-/*
-    <div id="settings">
+$('body').append(`
+<div id="settings">
       <img
         src="/img/settings.png"
         height="60px"
@@ -12,8 +12,8 @@
         <audio
           id="music"
           controls
-          onerror="$('#music').css('display', 'none')"
-          onloadeddata="$('#music').css('display', 'block')"
+          onerror="\$('#music').css('display', 'none')"
+          onloadeddata="\$('#music').css('display', 'block')"
           loop
           autoplay
         ><h1 style="color:white; font-family: Mono">Your browser doesn't support audio. :(</h1></audio>
@@ -94,17 +94,4 @@
     </div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/main.js"></script>
-*/
-settings = $("body").add("div")
-settings.attr("id","settings");
-
-settingicon = $("#settings").add("img")
-settingicon.attr("id","setting-icon")
-settingicon.attr("height","60px")
-settingicon.attr("width","60px")
-settingicon.attr("src","/img/settings.png")
-
-
-
-
-
+`)
