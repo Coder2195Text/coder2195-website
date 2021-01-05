@@ -95,6 +95,7 @@
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/main.js"></script>
 */
+alert('hi')
 settings = document.createElement("div");
 settings.id = "settings"
 settingicon = document.createElement("img");
