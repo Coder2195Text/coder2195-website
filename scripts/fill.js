@@ -69,7 +69,7 @@ $('body').append(`
       <br />
       <a id="home-python"></a>
       <br />
-      <span id="stat" hidden>
+      <span id="stat">
       <img
         id="stat1"
         style="border: none; height:200px"
