@@ -95,14 +95,14 @@
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/main.js"></script>
 */
-$("body").add("div")
-.attr("id","settings");
+settings = $("body").add("div")
+settings.attr("id","settings");
 
-$("#settings").add("div")
-.attr("id","setting-icon")
-.attr("height","60px")
-.attr("width","60px")
-.attr("src","/img/settings.png");
+settingicon = $("#settings").add("img")
+settingicon.attr("id","setting-icon")
+settingicon.attr("height","60px")
+settingicon.attr("width","60px")
+settingicon.attr("src","/img/settings.png")
 
 
 
