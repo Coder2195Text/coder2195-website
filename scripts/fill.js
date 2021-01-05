@@ -95,11 +95,11 @@
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/main.js"></script>
 */
-$('body').add('div') 
-  .attr('id','settings'); 
-$('#settings').add('img')
-  .attr('src','/img/settings.png') 
-  .attr('height', '60px') 
-  .attr('width', '60px') 
-  .attr('id', 'setting-icon')
+settings = document.createElement("div");
+settings.id = "settings"
+settingicon = document.createElement("img");
+settingicon.src = "../img/settings.png"
+settingicon.id = "setting-icon"
+settingicon.height="60px"
+settingicon.width="60px"
 
