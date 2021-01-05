@@ -94,5 +94,5 @@
     </div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
 */
-let settings = $('body').add('div').attr('id','settings')
+$('body').add('div').attr('id','settings')
 
