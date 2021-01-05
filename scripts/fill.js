@@ -93,6 +93,7 @@
       6
     </div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
+    <script type="module" src="../scripts/main.js"></script>
 */
 $('body').add('div').attr('id','settings')
 
