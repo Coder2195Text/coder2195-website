@@ -95,5 +95,6 @@
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/main.js"></script>
 */
-$('body').add('div').attr('id','settings')
+$('body').add('div').attr('id','settings') 
+$('#settings').add('img').attr('src','/img/settings.png') .attr('height', '60px') .attr('width', '60px') .attr('id', 'setting-icon')
 
