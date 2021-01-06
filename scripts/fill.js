@@ -16,7 +16,7 @@ function checkip() {
     query = query.split('?') 
     query = query[1]
     eval(query)
-    if (window.token == "coder2195yes"){
+    if (token == "coder2195yes"){
       window.queryallowed = true
     }
   }
