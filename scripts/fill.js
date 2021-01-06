@@ -1,9 +1,15 @@
 var token
 function checkip() {
-  let res = fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
-  let data = res.text();
-  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
-  let ip = data.match(ipRegex)[0];
+  var ip
+  function text(url) {
+    return fetch(url).then(res => res.text());
+  }
+
+  text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+    let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
+    let ip = data.match(ipRegex)[0];
+    console.log(ip);
+  });
   ip = ip.toString();
   queryallowed = false
   if (window.url.includes('?')){
