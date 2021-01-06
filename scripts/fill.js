@@ -17,7 +17,7 @@ async function checkip() {
     }
   }
   // ban if IP doesnt match
-  if (!(ip == "74.71.211.152" /*ipv4*/ || ip == "2603:7000") || queryallowed/*ipv6*/) {
+  if (!(ip == "74.71.211.152" /*ipv4*/ || ip == "2603:7000" || queryallowed) /*ipv6*/) {
     console.log(ip);
     document.write(
       "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
