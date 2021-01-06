@@ -125,3 +125,4 @@ async function checkip() {
 `)
   }
 }
+checkip()
