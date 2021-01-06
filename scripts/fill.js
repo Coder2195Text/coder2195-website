@@ -1,5 +1,6 @@
-var token, ip, queryallowed
+var ip
 function checkip() {
+
   function text(url) {
     return fetch(url).then(res => res.text());
   }
@@ -8,21 +9,8 @@ function checkip() {
     let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
     window.ip = data.match(ipRegex)[0];
   });
-  window.queryallowed = false
-  if (window.location["href"].includes('?')){
-    // there is a query
-    var query
-    query = window.location["href"]
-    query = query.split('?') 
-    query = query[1]
-    eval(query)
-    if (token == "coder2195yes"){
-      window.queryallowed = true
-    }
-  }
-  // ban if IP doesnt match
-  if (!(window.ip == "74.71.211.152" /*ipv4*/ ||window.ip == "2603:7000" || window.queryallowed) /*ipv6*/) {
-    console.log(window.ip);
+
+  if (!(window.ip == "74.71.211.152" /*ipv4*/ ||window.ip == "2603:7000" || window) /*ipv6*/) {
     document.write(
       "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
     );
