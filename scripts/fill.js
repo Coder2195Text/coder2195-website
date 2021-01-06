@@ -8,6 +8,7 @@ async function checkip() {
   queryallowed = false
   if (window.url.includes('?')){
     // there is a query
+    token = window.token
     var query
     query = window.location["href"]
     query = query.split('?') 
