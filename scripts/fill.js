@@ -1,4 +1,29 @@
-$('body').append(`
+async function checkip() {
+  let res = await fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
+  let data = await res.text();
+  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
+  let ip = data.match(ipRegex)[0];
+  ip = ip.toString();
+  queryallowed = false
+  if (window.url.includes('?')){
+    // there is a query
+    var query
+    query = window.location["href"]
+    query = query.split('?') 
+    query = query[1]
+    eval(query)
+    if (token == "coder2195yes"){
+      queryallowed = true
+    }
+  }
+  // ban if IP doesnt match
+  if (!(ip == "74.71.211.152" /*ipv4*/ || ip == "2603:7000") || queryallowed/*ipv6*/) {
+    console.log(ip);
+    document.write(
+      "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
+    );
+  } else {
+    $('body').append(`
 <div id="settings">
       <img
         src="/img/settings.png"
@@ -69,7 +94,7 @@ $('body').append(`
       <br />
       <a id="home-python"></a>
       <br />
-      <span id="stat">
+      <div id="stat">
       <img
         id="stat1"
         style="border: none; height:200px"
@@ -78,7 +103,7 @@ $('body').append(`
         id="stat2"
         style="border: none; height:200px"
       >
-      </span>
+      </div>
     </div>
     <div id="snap">
       3
@@ -95,3 +120,5 @@ $('body').append(`
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/main.js"></script>
 `)
+  }
+}

@@ -1,19 +1,5 @@
 import { langdata } from "../scripts/lang.js";
 var ls = window.localStorage;
-async function checkip() {
-  let res = await fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
-  let data = await res.text();
-  let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
-  let ip = data.match(ipRegex)[0];
-  ip = ip.toString();
-  // ban if IP doesnt match
-  if (!(ip == "74.71.211.152" /*ipv4*/ || ip == "2603:7000") /*ipv6*/) {
-    console.log(ip);
-    document.write(
-      "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
-    );
-  }
-}
 
 function setup() {
   $("body").css("visibility", "visible");
@@ -112,7 +98,6 @@ function checkmusicurl() {
     .change();
 }
 window.onload = () => {
-  //checkip();
   setup();
   changelang("en");
   changecolor();
