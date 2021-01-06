@@ -1,16 +1,14 @@
-var token
+var token, ip
 function checkip() {
-  var ip
   function text(url) {
     return fetch(url).then(res => res.text());
   }
 
   text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
     let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
-    let ip = data.match(ipRegex)[0];
-    console.log(ip);
+    window.ip = data.match(ipRegex)[0];
   });
-  ip = ip.toString();
+  window.ip = ip.toString();
   queryallowed = false
   if (window.url.includes('?')){
     // there is a query
@@ -24,8 +22,8 @@ function checkip() {
     }
   }
   // ban if IP doesnt match
-  if (!(ip == "74.71.211.152" /*ipv4*/ || ip == "2603:7000" || queryallowed) /*ipv6*/) {
-    console.log(ip);
+  if (!(window.ip == "74.71.211.152" /*ipv4*/ ||window.ip == "2603:7000" || queryallowed) /*ipv6*/) {
+    console.log(window.ip);
     document.write(
       "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
     );
