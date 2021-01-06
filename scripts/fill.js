@@ -1,7 +1,7 @@
 var token
-async function checkip() {
-  let res = await fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
-  let data = await res.text();
+function checkip() {
+  let res = fetch("https://www.cloudflare.com/cdn-cgi/trace"); // blocks execution until fetch is finished
+  let data = res.text();
   let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
   let ip = data.match(ipRegex)[0];
   ip = ip.toString();
