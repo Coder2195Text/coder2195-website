@@ -8,7 +8,7 @@ function checkip() {
     let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
     window.ip = data.match(ipRegex)[0];
   });
-  window.ip = ip.toString();
+  window.ip = window.ip.toString();
   queryallowed = false
   if (window.url.includes('?')){
     // there is a query
