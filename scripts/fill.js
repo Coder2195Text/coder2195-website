@@ -9,7 +9,7 @@ function checkip() {
     window.ip = data.match(ipRegex)[0];
   });
   queryallowed = false
-  if (window.url.includes('?')){
+  if (window.location["href"].includes('?')){
     // there is a query
     var query
     query = window.location["href"]
