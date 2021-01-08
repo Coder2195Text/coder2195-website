@@ -82,7 +82,7 @@ function checkip() {
       <h1 id="home-title">
         <div></div>
       </h1>
-      <a id="home-snap" href="javascript: null"></a>
+      <a id="home-snap" href="javascript: \$('home').css('display', 'none');\$('snap').css('display', 'block')"></a>
       <br />
       <a id="home-python"></a>
       <br />
