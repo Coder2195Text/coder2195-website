@@ -21,7 +21,7 @@
       it: ""
     }
   },*/
-export const langdata = {
+export const data = {
   head: {
     title: {
       en: "Coder2195's Website",

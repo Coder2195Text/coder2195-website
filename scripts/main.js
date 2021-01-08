@@ -1,4 +1,4 @@
-import { langdata } from "../scripts/lang.js";
+import { data } from "../scripts/data.js";
 var ls = window.localStorage;
 
 function setup() {
@@ -20,38 +20,38 @@ function setup() {
 function changelang(currentlang) {
   $("#stat").attr("hidden", true)
   // hide this first
-  document.title = langdata["head"]["title"][currentlang];
+  document.title = data["head"]["title"][currentlang];
   //change title!
-  $("#home-title div").text(langdata["titles"]["welcome"][currentlang]);
+  $("#home-title div").text(data["titles"]["welcome"][currentlang]);
   //change "welcome to my site" to their language
-  $("#home-snap").text(langdata["titles"]["snap"][currentlang]);
+  $("#home-snap").text(data["titles"]["snap"][currentlang]);
   //change music select options to current lang
   $("#music-select option[value='']").text(
-    langdata["music"]["no-music"][currentlang]
+    data["music"]["no-music"][currentlang]
   );
   $("#music-select option[value='../snd/coffindance.mp3']").text(
-    langdata["music"]["coffindance"][currentlang]
+    data["music"]["coffindance"][currentlang]
   );
   $("#music-select option[value='../snd/waterfall.mp3']").text(
-    langdata["music"]["nightwaterfall"][currentlang]
+    data["music"]["nightwaterfall"][currentlang]
   );
   $("#music-select option[value='../snd/invisible.mp3']").text(
-    langdata["music"]["invisible"][currentlang]
+    data["music"]["invisible"][currentlang]
   );
   $("#music-select option[value='../snd/fruitninjamusic.mp3']").text(
-    langdata["music"]["fruitninja"][currentlang]
+    data["music"]["fruitninja"][currentlang]
   );
   $("#music-select option[value='custom-music']").text(
-    langdata["music"]["custom"][currentlang]
+    data["music"]["custom"][currentlang]
   );
-  $("#music-url-input").attr("placeholder", langdata["music"]["custom"][currentlang]);
-  if (langdata["stat"]["support"][currentlang]){
+  $("#music-url-input").attr("placeholder", data["music"]["custom"][currentlang]);
+  if (data["stat"]["support"][currentlang]){
     //do stuff if it does support...
-    $("#stat1").attr("src", "https://github-readme-stats.vercel.app/api?username=coder2195text&show_icons=true&theme=tokyonight&locale=" + langdata["stat"]["conlang"][currentlang])
-    $("#stat2").attr("src", "https://github-readme-stats.vercel.app/api/top-langs/?username=coder2195text&theme=merko&layout=compact&locale=" + langdata["stat"]["conlang"][currentlang])
+    $("#stat1").attr("src", "https://github-readme-stats.vercel.app/api?username=coder2195text&show_icons=true&theme=tokyonight&locale=" + data["stat"]["conlang"][currentlang])
+    $("#stat2").attr("src", "https://github-readme-stats.vercel.app/api/top-langs/?username=coder2195text&theme=merko&layout=compact&locale=" + data["stat"]["conlang"][currentlang])
     $("#stat").attr("hidden", false)
   } 
-  $("#wallpaper-select option[value='default']").text(langdata["wallpaper"]["default"][currentlang])
+  $("#wallpaper-select option[value='default']").text(data["wallpaper"]["default"][currentlang])
 }
 
 let currentColor = 0;
