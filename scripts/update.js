@@ -15,6 +15,15 @@ function setup() {
   $("#lang-select").val(localStorage.getItem("lang"));
   //hide certain elements that are in dev
   $("#lang-select").val(localStorage.getItem("lang"));
+  $.ajax({
+    url: 'https://coder2195.vercel.app/package.json',
+    success: function(data) {
+      $('#web-version').text(data)
+    },
+    error: function(){
+      $('#web-version').text('Versions failed to load.')
+    }
+  })
 }
 
 function changelang(currentlang) {

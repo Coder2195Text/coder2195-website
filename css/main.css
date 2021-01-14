@@ -3,6 +3,10 @@
   src: url("../fonts/productsans.ttf") format("truetype");
 }
 @font-face {
+  font-family: "Version";
+  src: url("../fonts/version.ttf") format("truetype");
+}
+@font-face {
   font-family: "Snap";
   src: url("../fonts/snap.ttf") format("truetype");
 }
@@ -139,4 +143,14 @@ select {
   position: fixed;
   top: 0%;
   z-index: -1000;
+}
+#web-version{
+  font-family: Version;
+  font-size: 30pt;
+  background-color:darkgreen;
+  opacity: 0.5;
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  z-index: 5;
 }

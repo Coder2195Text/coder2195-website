@@ -91,8 +91,8 @@ function fill(){
       5
     </div>
     <div id="bar">
-      6
     </div>
+    <div id="web-version">Loading version...</div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/update.js"></script>
   `)
