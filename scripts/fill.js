@@ -98,16 +98,15 @@ function fill(){
   `)
 }
 
-function getIpAddress() {
-    $.ajax({
-        url: 'https://dotmaui.com/my-ip/raw/',
-        success: function(data) {
-            if (data.toString() == "74.71.211.152"){
-              fill()
-            } else {
-              document.write('The website is temporary down for upgrading...')
-            }
-        }
-    });
-}
+$.ajax({
+  url: 'https://dotmaui.com/my-ip/raw/',
+  success: function(data) {
+    if (data.toString() == "74.71.211.152"){
+      fill()
+    } else {
+      document.write('The website is temporary down for upgrading...')
+    }
+  }
+});
+
 
