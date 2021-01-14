@@ -156,4 +156,9 @@ select {
   color: white;
   border: 4mm ridge rgba(170, 50, 220, .6);
   padding: 10px;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+#web-version:hover{
+  opacity: 1;
 }
