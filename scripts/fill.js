@@ -94,7 +94,7 @@ function fill(){
       6
     </div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
-    <script type="module" src="../scripts/main.js"></script>
+    <script type="module" src="../scripts/update.js"></script>
   `)
 }
 
