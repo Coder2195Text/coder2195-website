@@ -18,7 +18,7 @@ function setup() {
   $.ajax({
     url: 'https://coder2195.vercel.app/package.json',
     success: function(data) {
-      $('#web-version').text(data)
+      $('#web-version').text(data.version)
     },
     error: function(){
       $('#web-version').text('Versions failed to load.')
