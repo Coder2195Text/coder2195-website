@@ -1,0 +1,20 @@
+{
+  "name": "Coder2195's Website",
+  "description": "My website!",
+  "version": "3.2",
+  "keywords": [
+    "coder2195",
+    "website",
+    "coder2195's website"
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://gitlab.com/Coder2195Text/coder2195-website.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/Coder2195Text/coder2195-website.git"
+    }
+  ]
+}
