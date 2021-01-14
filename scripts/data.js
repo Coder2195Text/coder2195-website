@@ -239,5 +239,23 @@ export const data = {
       el: "Προκαθορισμένο",
       it: "Predefinita"
     }
+  },
+  versions: {
+    fail: {
+      en: "Versions failed to load.",
+      ch: "版本无法加载。",
+      fr: "Échec du chargement des versions.",
+      sp: "No se pudieron cargar las versiones.",
+      pt: "As versões não foram carregadas.",
+      nl: "Versies kunnen niet worden geladen.",
+      de: "Versionen konnten nicht geladen werden.",
+      ar: "فشل تحميل الإصدارات.",
+      ru: "Не удалось загрузить версии.",
+      ko: "버전을로드하지 못했습니다.", 
+      jp: "バージョンの読み込みに失敗しました。",
+      hi: "संस्करण लोड करने में विफल रहे।",
+      el: "Απέτυχε η φόρτωση των εκδόσεων.",
+      it: "Impossibile caricare le versioni."
+    }
   }
 };

@@ -15,15 +15,6 @@ function setup() {
   $("#lang-select").val(localStorage.getItem("lang"));
   //hide certain elements that are in dev
   $("#lang-select").val(localStorage.getItem("lang"));
-  $.ajax({
-    url: 'https://coder2195.vercel.app/package.json',
-    success: function(data) {
-      $('#web-version').text("v" + data.version.toString())
-    },
-    error: function(){
-      $('#web-version').text('Versions failed to load.')
-    }
-  })
 }
 
 function changelang(currentlang) {
@@ -61,6 +52,16 @@ function changelang(currentlang) {
     $("#stat").attr("hidden", false)
   } 
   $("#wallpaper-select option[value='default']").text(data["wallpaper"]["default"][currentlang])
+  $('#web-version').text(`<img src="../img/load.gif" height="64px" width="64px">`)
+  $.ajax({
+    url: 'https://coder2195.vercel.app/package.json',
+    success: function(data) {
+      $('#web-version').text("v" + data.version.toString())
+    },
+    error: function(){
+      $('#web-version').text(data['version']['fail'][currentlang])
+    }
+  })
 }
 
 let currentColor = 0;
