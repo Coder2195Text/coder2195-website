@@ -1,21 +1,5 @@
-var ip
-function checkip() {
-
-  function text(url) {
-    return fetch(url).then(res => res.text());
-  }
-
-  text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
-    let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
-    window.ip = data.match(ipRegex)[0];
-  });
-
-  if (!(window.ip == "74.71.211.152" /*ipv4*/ ||window.ip == "2603:7000" || window) /*ipv6*/) {
-    document.write(
-      "<h1 style='font-size: 50pt; color: green; font-family: Verdana;'>It's private! Coder2195 is developing! Get out right this instant!</h1>"
-    );
-  } else {
-    $('body').append(`
+function fill(){
+  $('body').append(`
 <div id="settings">
       <img
         src="/img/settings.png"
@@ -111,7 +95,19 @@ function checkip() {
     </div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/main.js"></script>
-`)
-  }
+  `)
 }
-checkip()
+
+function getIpAddress() {
+    $.ajax({
+        url: 'https://dotmaui.com/my-ip/raw/',
+        success: function(data) {
+            if (data.toString() == "74.71.211.152"){
+              fill()
+            } else {
+              document.write('The website is temporary down for upgrading...')
+            }
+        }
+    });
+}
+
