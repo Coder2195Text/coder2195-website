@@ -154,4 +154,6 @@ select {
   right: 2%;
   z-index: 5;
   color: white;
+  border: 4mm ridge rgba(170, 50, 220, .6);
+  padding: 10px;
 }
