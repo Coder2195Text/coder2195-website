@@ -52,7 +52,7 @@ function changelang(currentlang) {
     $("#stat").attr("hidden", false)
   } 
   $("#wallpaper-select option[value='default']").text(data["wallpaper"]["default"][currentlang])
-  $('#web-version').text(`<img src="../img/load.gif" height="64px" width="64px">`)
+  $('#web-version').html(`<img src="../img/load.gif" height="64px" width="64px">`)
   $.ajax({
     url: 'https://coder2195.vercel.app/package.json',
     success: function(data) {
