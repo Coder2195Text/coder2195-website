@@ -92,7 +92,7 @@ function fill(){
     </div>
     <div id="bar">
     </div>
-    <div id="web-version"><img src="../img/load.gif"></div>
+    <div id="web-version"><img src="../img/load.gif" height="64px" width="64px"></div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/update.js"></script>
   `)
