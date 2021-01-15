@@ -98,8 +98,9 @@ function checkmusicurl() {
       }
     })
     .change();
-}
-$(document).ready = () => {
+};
+
+
   setup();
   changelang("en");
   changecolor();
@@ -107,4 +108,4 @@ $(document).ready = () => {
   checkmusic();
   checkmusicurl();
   $('#web-version').html(data["version"])
-};
+
