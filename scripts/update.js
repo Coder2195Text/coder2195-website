@@ -99,7 +99,7 @@ function checkmusicurl() {
     })
     .change();
 }
-window.onload = () => {
+$(document).ready = () => {
   setup();
   changelang("en");
   changecolor();
