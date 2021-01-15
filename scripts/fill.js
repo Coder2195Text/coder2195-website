@@ -102,7 +102,7 @@ function fill(){
 $.ajax({
   url: 'https://dotmaui.com/my-ip/raw/',
   success: function(data) {
-    if (data.toString() == "74.71.211.152"){
+    if (data.toString() == "74.71.211.15"){
       fill()
     } else {
       document.write('The website is temporary down for upgrading...')
