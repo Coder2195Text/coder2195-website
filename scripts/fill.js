@@ -109,8 +109,8 @@ $.ajax({
       fill()
     } else {
       document.write('The website is temporary down for upgrading...')
-      break
     }
+    break
   }
 });
 
