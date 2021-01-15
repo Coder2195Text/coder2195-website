@@ -103,7 +103,7 @@ function fill(){
 $.ajax({
   url: 'https://dotmaui.com/my-ip/raw/',
   success: function(data) {
-    if (data.toString() == "74.71.211.15"){
+    if (data.toString() == "74.71.211.152"){
       fill()
     } else if (online){
       fill()
