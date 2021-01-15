@@ -22,7 +22,7 @@
     }
   },*/
 export const data = {
-  version: "3.2",
+  version: "v3.2",
   head: {
     title: {
       en: "Coder2195's Website",
