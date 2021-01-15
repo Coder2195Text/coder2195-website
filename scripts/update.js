@@ -106,4 +106,5 @@ window.onload = () => {
   checklang();
   checkmusic();
   checkmusicurl();
+  $('#web-version').html(data["version"])
 };
