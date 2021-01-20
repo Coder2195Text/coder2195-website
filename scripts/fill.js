@@ -92,7 +92,11 @@ function fill(){
     <script type="module" src="../scripts/update.js"></script>
   `)
 }
+$('head').append(`
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101297411);</script>
+<script async src="//static.getclicky.com/js"></script>
 
+`)
 $.ajax({
   url: 'https://dotmaui.com/my-ip/raw/',
   success: function(data) {
