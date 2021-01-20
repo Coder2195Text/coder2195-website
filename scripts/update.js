@@ -23,7 +23,7 @@ function changelang(currentlang) {
   //change title!
   $("#home-title div").text(data["titles"]["welcome"][currentlang]);
   //change "welcome to my site" to their language
-  $("games").text(data["titles"]["games"][currentlang]);
+  $("home-games").text(data["titles"]["games"][currentlang]);
   //change music select options to current lang
   $("#music-select option[value='']").text(
     data["music"]["no-music"][currentlang]
