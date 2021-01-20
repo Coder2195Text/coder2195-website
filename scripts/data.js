@@ -58,37 +58,21 @@ export const data = {
       el: "Καλώς ήλθατε στον ιστότοπό μου!",
       it: "Benvenuto nel mio sito web!"
     },
-    snap: {
-      en: "My Snap Games",
-      ch: "我 Snap 的游戏",
-      fr: "Mes Jeux Snap",
-      sp: "Mis Juegos Snap",
-      pt: "Meus Jogos Snap",
-      nl: "My Snap-spellen",
-      de: "Meine Snap Spiele",
-      ar: "ألعابي Snap",
-      ru: "Мои игры Snap",
-      ko: "내 Snap 게임",
-      jp: "私の Snap ゲーム",
-      hi: "मेरे Snap खेल",
-      el: "Τα Snap παιχνίδια μου",
-      it: "I miei giochi Snap"
-    },
-    python: {
-      en: "My Python Games",
-      ch: "我 Python 的游戏",
-      fr: "Mes Jeux Python",
-      sp: "Mis Juegos Python",
-      pt: "Meus Jogos Python",
-      nl: "My Python-spellen",
-      de: "Meine Python Spiele",
-      ar: "ألعابي Python",
-      ru: "Мои игры Python",
-      ko: "내 Python 게임",
-      jp: "私の Python ゲーム",
-      hi: "मेरे Python खेल",
-      el: "Τα Python παιχνίδια μου",
-      it: "I miei giochi Python"
+    games: {
+      en: "Coder2195's Games",
+      ch: "Coder2195的游戏",
+      fr: "Jeux de Coder2195",
+      sp: "Juegos de Coder2195",
+      pt: "Jogos do Coder2195",
+      nl: "De spellen van Coder2195",
+      de: "Coder2195 Spiele",
+      ar: "ألعاب Coder2195",
+      ru: "Игры Coder2195",
+      ko: "Coder2195의 게임",
+      jp: "Coder2195のゲーム",
+      hi: "Coder2195 का खेल",
+      el: "Παιχνίδια του Coder2195",
+      it: "Giochi di Coder2195"
     }
   },
   music:{

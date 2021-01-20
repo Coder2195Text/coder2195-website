@@ -83,14 +83,8 @@ function fill(){
       </div>
       <a class="twitter-timeline" data-align="center" data-width="50%" data-height="400px" data-theme="dark" href="https://twitter.com/coder2195?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-    <div id="snap">
+    <div id="games">
       3
-    </div>
-    <div id="python">
-      4
-    </div>
-    <div id="other">
-      5
     </div>
     <div id="bar">
     </div>

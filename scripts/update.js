@@ -4,9 +4,7 @@ var ls = window.localStorage;
 function setup() {
   $("body").css("visibility", "visible");
   //hide certain elements
-  $("#snap").css("display", "none");
-  $("#python").css("display", "none");
-  $("#other").css("display", "none");
+  $("#games").css("display", "none");
   //show certain elements
   $("#settings").css("display", "inline-block");
   $("#home").css("display", "block");
@@ -25,7 +23,7 @@ function changelang(currentlang) {
   //change title!
   $("#home-title div").text(data["titles"]["welcome"][currentlang]);
   //change "welcome to my site" to their language
-  $("#home-snap").text(data["titles"]["snap"][currentlang]);
+  $("games").text(data["titles"]["games"][currentlang]);
   //change music select options to current lang
   $("#music-select option[value='']").text(
     data["music"]["no-music"][currentlang]
