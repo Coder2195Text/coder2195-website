@@ -67,7 +67,7 @@ function fill(){
       <h1 id="home-title">
         <div></div>
       </h1>
-      <a id="home-games" href="javascript: \$('home').css('display', 'none');\$('snap').css('display', 'block')"></a>
+      <a id="home-games" href="javascript: \$('#home').css('display', 'none');\$('#games').css('display', 'block')"></a>
       <br />
       <br />
       <div id="stat">
