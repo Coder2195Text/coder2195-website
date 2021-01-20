@@ -29,6 +29,11 @@ body {
   left: 0%;
   bottom: 0px;
   background-image: url("../img/bluecode.png");
+  transition-property: bottom;
+  transition-duration: 1s;
+}
+#bar:hover{
+  bottom: -60px;
 }
 a {
   position: relative;
