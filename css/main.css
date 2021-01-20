@@ -139,6 +139,7 @@ select {
 #home-games {
   font-family: Python;
   font-size: 30pt;
+  color: salmon;
 }
 #backdrop{
   min-width: 100vw; 
