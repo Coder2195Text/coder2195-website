@@ -80,7 +80,6 @@ function fill(){
         style="border: none; height:200px"
       >
       </div>
-      <a class="twitter-timeline" data-align="center" data-width="50%" data-height="400px" data-theme="dark" href="https://twitter.com/coder2195?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
     <div id="games">
       3
