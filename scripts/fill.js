@@ -1,6 +1,5 @@
-online = true
-function fill(){
-  $('body').append(`
+function fill() {
+  $("body").append(`
 <div id="settings">
       <img
         src="/img/settings.png"
@@ -89,21 +88,6 @@ function fill(){
     <div id="web-version"><img src="../img/load.gif" height="64px" width="64px"></div>
     <img id="backdrop" src="../img/lines-of-code.jpg">
     <script type="module" src="../scripts/update.js"></script>
-  `)
+  `);
 }
-$('head').append(`
-`)
-$.ajax({
-  url: 'https://dotmaui.com/my-ip/raw/',
-  success: function(data) {
-    if (data.toString() == "74.71.211.152"){
-      fill()
-    } else if (online){
-      fill()
-    } else {
-      document.write('The website is temporary down for upgrading...')
-    }
-  }
-});
-
-
+fill();
