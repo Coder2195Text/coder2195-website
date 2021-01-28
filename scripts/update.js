@@ -75,9 +75,11 @@ function updateframe() {
   currentColor += 1;
   if (currentColor == 360) currentColor = 0;
   $("#home-title").css("color", `hsl(${currentColor.toString()}, 100%, 50%)`);
-  $("#setting-content").css("max-height", window.innerHeight * 0.8);
-  setTimeout(updateframe, 10);
   //end change color
+  //start resize settings
+  $("#setting-content").css("max-height", window.innerHeight * 0.8);
+  //end resize settings
+  setTimeout(updateframe, 10);
 }
 
 function checklang() {
