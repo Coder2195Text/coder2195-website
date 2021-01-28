@@ -16,8 +16,10 @@ function setup() {
 }
 
 function changelang(currentlang) {
-  $('#web-version').html(`<img src="../img/load.gif" height="64px" width="64px">`)
-  $("#stat").attr("hidden", true)
+  $("#web-version").html(
+    `<img src="../img/load.gif" height="64px" width="64px">`
+  );
+  $("#stat").attr("hidden", true);
   // hide this first
   document.title = data["head"]["title"][currentlang];
   //change title!
@@ -43,28 +45,44 @@ function changelang(currentlang) {
   $("#music-select option[value='custom-music']").text(
     data["music"]["custom"][currentlang]
   );
-  $("#music-url-input").attr("placeholder", data["music"]["custom"][currentlang]);
-  if (data["stat"]["support"][currentlang]){
+  $("#music-url-input").attr(
+    "placeholder",
+    data["music"]["custom"][currentlang]
+  );
+  if (data["stat"]["support"][currentlang]) {
     //do stuff if it does support...
-    $("#stat1").attr("src", "https://github-readme-stats.vercel.app/api?username=coder2195text&show_icons=true&theme=tokyonight&locale=" + data["stat"]["conlang"][currentlang])
-    $("#stat2").attr("src", "https://github-readme-stats.vercel.app/api/top-langs/?username=coder2195text&theme=merko&layout=compact&locale=" + data["stat"]["conlang"][currentlang])
-    $("#stat").attr("hidden", false)
-  } 
-  $("#wallpaper-select option[value='default']").text(data["wallpaper"]["default"][currentlang])
-  $('#web-version').html(data["version"])
+    $("#stat1").attr(
+      "src",
+      "https://github-readme-stats.vercel.app/api?username=coder2195text&show_icons=true&theme=tokyonight&locale=" +
+        data["stat"]["conlang"][currentlang]
+    );
+    $("#stat2").attr(
+      "src",
+      "https://github-readme-stats.vercel.app/api/top-langs/?username=coder2195text&theme=merko&layout=compact&locale=" +
+        data["stat"]["conlang"][currentlang]
+    );
+    $("#stat").attr("hidden", false);
+  }
+  $("#wallpaper-select option[value='default']").text(
+    data["wallpaper"]["default"][currentlang]
+  );
+  $("#web-version").html(data["version"]);
 }
 
 let currentColor = 0;
-function changecolor() {
-  currentColor += 1; // change
+function updateframe() {
+  // start change color
+  currentColor += 1;
   if (currentColor == 360) currentColor = 0;
   $("#home-title").css("color", `hsl(${currentColor.toString()}, 100%, 50%)`);
-  setTimeout(changecolor, 10);
+  $("#setting-content").css("max-height", window.innerHeight * 0.8);
+  setTimeout(updateframe, 10);
+  //end change color
 }
 
 function checklang() {
   $("#lang-select")
-    .change(function() {
+    .change(function () {
       if ($("#lang-select").val() == null) {
         $("#lang-select").val("en");
       }
@@ -76,7 +94,7 @@ function checklang() {
 
 function checkmusic() {
   $("#music-select")
-    .change(function() {
+    .change(function () {
       $("#music").css("display", "none");
       if ($("#music-select").val() == "custom-music") {
         $("#music-url-input").css("display", "inline-block");
@@ -90,20 +108,18 @@ function checkmusic() {
 }
 function checkmusicurl() {
   $("#music-url-input")
-    .change(function() {
+    .change(function () {
       if ($("#music-select").val() == "custom-music") {
         $("#music").attr("src", $("#music-url-input").val());
       }
     })
     .change();
-};
+}
 
-
-  setup();
-  changelang("en");
-  changecolor();
-  checklang();
-  checkmusic();
-  checkmusicurl();
-  $('#web-version').html(data["version"])
-
+setup();
+changelang("en");
+updateframe();
+checklang();
+checkmusic();
+checkmusicurl();
+$("#web-version").html(data["version"]);
