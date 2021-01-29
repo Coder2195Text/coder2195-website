@@ -2,7 +2,6 @@ import { data } from "../scripts/data.js";
 var ls = window.localStorage;
 
 function setup() {
-  $("body").css("visibility", "visible");
   //hide certain elements
   $("#games").css("display", "none");
   //show certain elements
@@ -13,6 +12,7 @@ function setup() {
   $("#lang-select").val(localStorage.getItem("lang"));
   //hide certain elements that are in dev
   $("#lang-select").val(localStorage.getItem("lang"));
+  $("body").css("display", "block");
 }
 
 function changelang(currentlang) {

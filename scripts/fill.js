@@ -101,4 +101,5 @@ function fill() {
     <script type="module" src="../scripts/update.js"></script>
   `);
 }
+$("body").css("display", "none");
 fill();
