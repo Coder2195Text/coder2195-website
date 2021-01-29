@@ -100,10 +100,3 @@ function fill() {
   `);
 }
 fill();
-if (
-  getquery("user") == "gf" &&
-  window.localStorage.getItem("wentbefore") == null
-) {
-  alert("Hey babe! Welcome!");
-  window.localStorage.setItem("wentbefore", "true");
-}
