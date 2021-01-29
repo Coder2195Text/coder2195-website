@@ -32,7 +32,7 @@ body {
   transition-property: bottom;
   transition-duration: 1s;
 }
-#bar:hover{
+#bar:hover {
   bottom: 0px;
 }
 a {
@@ -140,30 +140,40 @@ select {
   font-size: 30pt;
   color: salmon;
 }
-#backdrop{
-  min-width: 100vw; 
-  min-height: 100vh; 
-  left:0%;
+#backdrop {
+  min-width: 100vw;
+  min-height: 100vh;
+  left: 0%;
   display: inline-block;
   position: fixed;
   top: 0%;
   z-index: -1000;
 }
-#web-version{
+#web-version {
   font-family: Version;
   font-size: 30pt;
-  background-color:darkgreen;
+  background-color: darkgreen;
   opacity: 0.5;
   position: fixed;
   top: 2%;
   right: 2%;
   z-index: 5;
   color: white;
-  border: 4mm ridge rgba(170, 50, 220, .6);
+  border: 4mm ridge rgba(170, 50, 220, 0.6);
   padding: 10px;
   transition-property: opacity;
   transition-duration: 1s;
 }
-#web-version:hover{
+#web-version:hover {
   opacity: 1;
+}
+#games-title {
+  font-family: Product Sans;
+  font-size: 40pt;
+  color: lightgreen;
+}
+#games-app {
+  background-color: gray;
+  width: 610px;
+  height: 460px;
 }

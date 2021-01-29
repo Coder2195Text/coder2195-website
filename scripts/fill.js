@@ -90,7 +90,9 @@ function fill() {
       </div>
     </div>
     <div id="games">
-      3
+      <div id="games-title">No game selected</div>
+      <br>
+      <iframe id="games-app"></iframe>
     </div>
     <div id="bar">
     </div>
