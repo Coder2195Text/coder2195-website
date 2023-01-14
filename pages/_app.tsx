@@ -7,9 +7,12 @@ import { useTheme } from "next-themes";
 import { FC, useEffect, useState } from "react";
 import Head from "next/head";
 
-const AppBody: FC<{ children: JSX.Element | JSX.Element[] }> = ({
-  children,
-}) => {
+const AppBody: FC<{
+  children: JSX.Element | JSX.Element[];
+  mounted: boolean;
+}> = ({ children, mounted }) => {
+  //if not mounted, just return the children which will already be handled against hydration mismatch
+  if (!mounted) return <>{children}</>;
   const { theme } = useTheme();
   const resolvedTheme = theme ? theme : "light";
   return (
@@ -23,16 +26,20 @@ const AppBody: FC<{ children: JSX.Element | JSX.Element[] }> = ({
   );
 };
 
+export interface PageProps {
+  mounted: boolean;
+}
+
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <></>;
   return (
     <ThemeProvider enableSystem={false}>
       <DefaultSeo
+        title="Coder2195's Website - 404 Not Found"
         additionalMetaTags={[
           {
             name: "msapplication-TileColor",
@@ -59,8 +66,8 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppBody>
-        <Component {...pageProps} />
+      <AppBody mounted={mounted}>
+        <Component {...pageProps} mounted={mounted} />
       </AppBody>
     </ThemeProvider>
   );

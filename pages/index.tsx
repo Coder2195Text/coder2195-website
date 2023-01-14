@@ -2,15 +2,11 @@ import { NextSeo } from "next-seo";
 import Head from "next/head";
 import Image from "next/image";
 import { FC } from "react";
+import { PageProps } from "./_app";
 
-const Home: FC = () => {
-  return (
+const Home: FC<PageProps> = ({ mounted }) => {
+  const contents = (
     <>
-      <NextSeo
-        title="Coder2195 - Home"
-        description="The home page of coder2195's website"
-      />
-
       <h3>Coder2195 the Great</h3>
       <div className="flex items-stretch">
         <div className="inline-block md:w-1/2">
@@ -35,6 +31,15 @@ const Home: FC = () => {
       <h5>Projects</h5>
       <div> hi </div>
       <h5 id="links">links placeholder</h5>
+    </>
+  );
+  return (
+    <>
+      <NextSeo
+        title="Coder2195 - Home"
+        description="The home page of coder2195's website"
+      />
+      {mounted ? contents : []}
     </>
   );
 };
