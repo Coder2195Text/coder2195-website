@@ -39,7 +39,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider enableSystem={false}>
       <DefaultSeo
-        title="Coder2195's Website - 404 Not Found"
+        title="Coder2195's - 404 Not Found"
         additionalMetaTags={[
           {
             name: "msapplication-TileColor",

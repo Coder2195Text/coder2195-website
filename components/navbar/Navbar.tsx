@@ -1,6 +1,7 @@
-import { useState, useEffect, useContext } from "react";
-import { FaCloudMoon, FaFolderOpen } from "react-icons/fa";
-import { BiLink, BiNotepad, BiSun } from "react-icons/bi";
+import { useState } from "react";
+import { FaFolderOpen } from "react-icons/fa";
+import { BiLink, BiNotepad } from "react-icons/bi";
+import { BsPersonCircle } from "react-icons/bs";
 import {
   Navbar,
   MobileNav,
@@ -10,9 +11,13 @@ import {
 } from "@material-tailwind/react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { useRouter } from "next/router";
 
 const NAV_MAP: { [key: string]: JSX.Element } = {
+  "/profile": (
+    <>
+      <BsPersonCircle className="pr-1" /> About Me
+    </>
+  ),
   "/projects": (
     <>
       <FaFolderOpen className="pr-1" /> Projects
@@ -23,7 +28,7 @@ const NAV_MAP: { [key: string]: JSX.Element } = {
       <BiNotepad className="pr-1" /> Blog
     </>
   ),
-  "/#socials": (
+  "/profile#socials": (
     <>
       <BiLink className="pr-1" /> Socials
     </>
@@ -31,7 +36,6 @@ const NAV_MAP: { [key: string]: JSX.Element } = {
 };
 
 export default function NavBar() {
-  const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [openNav, setOpenNav] = useState(false);
   const isLight = theme == "light";
@@ -57,7 +61,7 @@ export default function NavBar() {
           key={link}
           as="li"
           color="blue-gray"
-          className="p-1 font-header"
+          className="p-1 font-header text-xl"
         >
           <Link
             href={link}
@@ -71,10 +75,12 @@ export default function NavBar() {
   );
 
   return (
-    <Navbar className="w-screen fixed left-0 top-0 max-w-none dark:bg-blue-gray-900 dark:border-blue-gray-800 z-10">
+    <Navbar className="w-screen fixed left-0 top-0 max-w-none dark:bg-blue-gray-900 dark:border-blue-gray-800 z-10 py-4">
       <div className="flex items-center justify-between text-blue-gray-900 dark:text-blue-gray-100">
-        <Typography as="li" className="mr-4 py-1.5 font-header">
-          <Link href="/#top">Coder2195</Link>
+        <Typography as="li" className="mr-4 py-1 font-header text-2xl">
+          <Link href="/" className="no-underline">
+            Coder2195
+          </Link>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         {themeButton}

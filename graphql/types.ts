@@ -34,6 +34,7 @@ export interface IProject {
     embed: string;
     description: IRichText;
     excerpt: string | null;
+    featured: boolean
 }
 
 export interface ISocial {

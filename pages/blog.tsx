@@ -21,7 +21,8 @@ export const getStaticProps: GetStaticProps = async () => {
 const Blog: FC<Props> = ({ posts }) => {
   return (
     <div>
-      <h1 id="title">Blog Posts</h1>
+      <h3 id="title">Blog Posts</h3>
+      <br />
       {JSON.stringify(posts)}
     </div>
   );
