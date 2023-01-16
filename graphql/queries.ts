@@ -57,8 +57,8 @@ export async function fetchBlogSlugs() {
     return blogPosts.map((post: IBlogPost) => { return post.slug })
 }
 
-export async function fetchSocials(){
-    const {socials} = await hygraph.request<{socials: ISocial[]}>(`
+export async function fetchSocials() {
+    const { socials } = await hygraph.request<{ socials: ISocial[] }>(`
         query {
             socials {
                 icon {

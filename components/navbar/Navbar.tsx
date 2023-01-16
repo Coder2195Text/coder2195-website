@@ -15,22 +15,22 @@ import { useTheme } from "next-themes";
 const NAV_MAP: { [key: string]: JSX.Element } = {
   "/profile": (
     <>
-      <BsPersonCircle className="pr-1" /> About Me
+      <BsPersonCircle className="pr-1 inline-block" /> About Me
     </>
   ),
   "/projects": (
     <>
-      <FaFolderOpen className="pr-1" /> Projects
+      <FaFolderOpen className="pr-1 inline-block" /> Projects
     </>
   ),
   "/blog": (
     <>
-      <BiNotepad className="pr-1" /> Blog
+      <BiNotepad className="pr-1 inline-block" /> Blog
     </>
   ),
   "/profile#socials": (
     <>
-      <BiLink className="pr-1" /> Socials
+      <BiLink className="pr-1 inline-block" /> Socials
     </>
   ),
 };
@@ -44,7 +44,7 @@ export default function NavBar() {
       ripple={true}
       variant="gradient"
       size="sm"
-      className="lg:inline-block font-header"
+      className="inline-block font-header"
       color={isLight ? "yellow" : "blue-gray"}
       onClick={() => {
         setTheme(isLight ? "dark" : "light");
@@ -57,18 +57,15 @@ export default function NavBar() {
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
       {Object.keys(NAV_MAP).map((link) => (
-        <Typography
-          key={link}
-          as="li"
-          color="blue-gray"
-          className="p-1 font-header text-xl"
-        >
-          <Link
-            href={link}
-            className="flex items-center text-blue-gray-900 dark:text-blue-gray-100"
-          >
-            {NAV_MAP[link]}
-          </Link>
+        <Typography key={link} as="li" className="p-1 font-header text-xl">
+          <span>
+            <Link
+              href={link}
+              className="text-blue-gray-900 dark:text-blue-gray-100 before:bg-blue-gray-900 before:dark:bg-blue-gray-100 "
+            >
+              {NAV_MAP[link]}
+            </Link>
+          </span>
         </Typography>
       ))}
     </ul>
@@ -77,8 +74,14 @@ export default function NavBar() {
   return (
     <Navbar className="w-screen fixed left-0 top-0 max-w-none dark:bg-blue-gray-900 dark:border-blue-gray-800 z-10 py-4">
       <div className="flex items-center justify-between text-blue-gray-900 dark:text-blue-gray-100">
-        <Typography as="li" className="mr-4 py-1 font-header text-2xl">
-          <Link href="/" className="no-underline">
+        <Typography
+          as="li"
+          className="mr-4 py-1 font-header text-2xl font-bold text-black dark:text-white"
+        >
+          <Link
+            href="/"
+            className="no-underline hover:before:scale-x-0  text-green-900 dark:text-green-100"
+          >
             Coder2195
           </Link>
         </Typography>

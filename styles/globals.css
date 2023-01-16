@@ -1,26 +1,3 @@
-@keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-2px, 0, 0);
-  }
-
-  20%,
-  80% {
-    transform: translate3d(4px, 0, 0);
-  }
-
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-8px, 0, 0);
-  }
-
-  40%,
-  60% {
-    transform: translate3d(8px, 0, 0);
-  }
-}
-
 @font-face {
   font-family: "Manrope";
   src: url("/fonts/manrope.ttf");
@@ -52,7 +29,9 @@
   }
 
   a {
-    @apply underline hover:decoration-dashed decoration-blue-gray-500;
+    @apply relative text-blue-900 dark:text-blue-200 before:content-[''] before:absolute before:w-full before:h-0.5 before:rounded before:bottom-0 before:left-0 before:bg-blue-600 dark:before:bg-blue-400
+      before:origin-right before:transform before:scale-x-0 before:transition-transform
+      hover:before:origin-left hover:before:scale-x-100;
   }
 
   h1 {
