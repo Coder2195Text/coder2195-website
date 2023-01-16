@@ -31,6 +31,5 @@
     "typescript": "4.9.4",
     "vanta": "^0.5.24",
     "yarn": "^1.22.19"
-  },
-  "type": "module"
+  }
 }
