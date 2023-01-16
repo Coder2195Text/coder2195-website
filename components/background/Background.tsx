@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from "react";
-import "./three.min";
+import * as THREE from "three";
 //@ts-ignore
 import NET from "vanta/dist/vanta.net.min";
 

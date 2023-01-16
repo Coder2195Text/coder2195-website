@@ -7,7 +7,6 @@ import { useTheme } from "next-themes";
 import { FC, useEffect, useState } from "react";
 import Head from "next/head";
 import Background from "../components/background/Background";
-import Script from "next/script";
 
 const AppBody: FC<{
   children: JSX.Element | JSX.Element[];
