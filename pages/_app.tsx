@@ -6,6 +6,8 @@ import { ThemeProvider } from "next-themes";
 import { useTheme } from "next-themes";
 import { FC, useEffect, useState } from "react";
 import Head from "next/head";
+import Background from "../components/background/Background";
+import Script from "next/script";
 
 const AppBody: FC<{
   children: JSX.Element | JSX.Element[];
@@ -13,14 +15,15 @@ const AppBody: FC<{
 }> = ({ children, mounted }) => {
   //if not mounted, just return the children which will already be handled against hydration mismatch
   if (!mounted) return <>{children}</>;
-  const { theme } = useTheme();
-  const resolvedTheme = theme ? theme : "light";
+  const { resolvedTheme } = useTheme();
   return (
     <div
       className={`scroll-smooth fixed w-screen h-[calc(100vh-72px)] overflow-auto px-3 py-4 bottom-0 ${resolvedTheme}`}
     >
       <NavBar />
+      <div id="bg" className={`fixed left-0 top-0 w-full h-full -z-10`}></div>
       <span id="top"></span>
+      <Background mounted={mounted} />
       {children}
     </div>
   );
@@ -66,6 +69,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <AppBody mounted={mounted}>
         <Component {...pageProps} mounted={mounted} />
       </AppBody>
