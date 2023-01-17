@@ -2,10 +2,9 @@ import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-import { PageProps } from "./_app";
 import { BsFillExclamationTriangleFill } from "react-icons/bs";
 
-const Home: FC<PageProps> = ({ mounted }) => {
+const Home: FC = () => {
   const contents = (
     <>
       <h3>Coder2195 the Great</h3>
@@ -44,7 +43,7 @@ const Home: FC<PageProps> = ({ mounted }) => {
         title="Coder2195 - Home"
         description="The home page of coder2195's website"
       />
-      {mounted ? contents : undefined}
+      {contents}
     </>
   );
 };

@@ -2,7 +2,6 @@ import { NextSeo } from "next-seo";
 import Image from "next/image";
 import React, { FC } from "react";
 import { SiNextdotjs, SiPrisma, SiRust } from "react-icons/si";
-import { PageProps } from "./_app";
 
 const PRIDE_FLAGS: {
   [key: string]: string;
@@ -179,7 +178,7 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
   ),
 };
 
-const Home: FC<PageProps> = ({ mounted }) => {
+const Home: FC = () => {
   const contents = (
     <>
       <h3>About Me</h3>
@@ -203,7 +202,7 @@ const Home: FC<PageProps> = ({ mounted }) => {
         title="Coder2195 - Profile"
         description="Contents about Coder2195"
       />
-      {mounted ? contents : undefined}
+      {contents}
     </>
   );
 };
