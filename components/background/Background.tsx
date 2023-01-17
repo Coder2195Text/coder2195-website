@@ -34,13 +34,11 @@ const Background: FC<PageProps> = ({ mounted }) => {
         })
       );
     else {
-      if (vantaEffect) {
-        //@ts-ignore
-        vantaEffect.setOptions({
-          color: resolvedTheme == "dark" ? 0xff3f81 : 0x6adc6a,
-          backgroundColor: resolvedTheme == "dark" ? 0x0 : 0xffffff,
-        });
-      }
+      //@ts-ignore
+      vantaEffect.setOptions({
+        color: resolvedTheme == "dark" ? 0xff3f81 : 0x6adc6a,
+        backgroundColor: resolvedTheme == "dark" ? 0x0 : 0xffffff,
+      });
     }
   }, [resolvedTheme]);
   return <></>;

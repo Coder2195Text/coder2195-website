@@ -20,8 +20,6 @@ const AppBody: FC<{
       className={`scroll-smooth fixed w-screen h-[calc(100vh-72px)] overflow-auto px-3 py-4 bottom-0 ${resolvedTheme}`}
     >
       <NavBar />
-      <div id="bg" className={`fixed left-0 top-0 w-full h-full -z-10`}></div>
-      <span id="top"></span>
       <Background mounted={mounted} />
       {children}
     </div>
@@ -68,8 +66,9 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <span id="top"></span>
       <AppBody mounted={mounted}>
+        <div id="bg" className={`fixed left-0 top-0 w-full h-full -z-10`}></div>
         <Component {...pageProps} mounted={mounted} />
       </AppBody>
     </ThemeProvider>

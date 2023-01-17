@@ -72,7 +72,7 @@ export default function NavBar() {
   );
 
   return (
-    <Navbar className="w-screen fixed left-0 top-0 max-w-none dark:bg-blue-gray-900 dark:border-blue-gray-800 z-10 py-4">
+    <Navbar className="w-screen fixed left-0 top-0 max-w-none dark:bg-blue-gray-900 dark:border-blue-gray-800 z-10 py-4 rounded-none">
       <div className="flex items-center justify-between text-blue-gray-900 dark:text-blue-gray-100">
         <Typography
           as="li"
