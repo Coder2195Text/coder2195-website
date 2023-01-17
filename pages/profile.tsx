@@ -149,20 +149,21 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
       <h6>Tools:</h6>
       {Object.keys(TOOLS_EXPERIENCE).map((level) => (
         <div key={level}>
-          {TOOLS_EXPERIENCE[level].map((icon) =>
-            typeof icon.src !== "string" ? (
-              icon.src
-            ) : (
-              <Image
-                width={64}
-                height={64}
-                src={icon.src}
-                key={icon.name}
-                alt={icon.name}
-                className="inline-block"
-              />
-            )
-          )}{" "}
+          {TOOLS_EXPERIENCE[level].map((icon) => (
+            <span key={icon.name}>
+              {typeof icon.src !== "string" ? (
+                icon.src
+              ) : (
+                <Image
+                  width={64}
+                  height={64}
+                  src={icon.src}
+                  alt={icon.name}
+                  className="inline-block"
+                />
+              )}
+            </span>
+          ))}{" "}
           - {level}
         </div>
       ))}

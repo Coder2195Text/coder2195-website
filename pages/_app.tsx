@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import { FC, useEffect, useState } from "react";
 import Head from "next/head";
 import Background from "../components/background/Background";
+import Loading from "../components/loading/Loading";
 
 const AppBody: FC<{
   children: JSX.Element | JSX.Element[];
@@ -66,9 +67,9 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <span id="top"></span>
       <AppBody mounted={mounted}>
         <div id="bg" className={`fixed left-0 top-0 w-full h-full -z-10`}></div>
+        <Loading />
         <Component {...pageProps} mounted={mounted} />
       </AppBody>
     </ThemeProvider>

@@ -55,6 +55,9 @@
 }
 
 @layer components {
+  @keyframes flash {
+  }
+
   .dark {
     @apply bg-black text-white;
   }
