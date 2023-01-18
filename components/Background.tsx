@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import * as THREE from "three";
 //@ts-ignore
 import NET from "vanta/dist/vanta.net.min";
