@@ -45,6 +45,9 @@ export default function NavBar() {
             <Link
               href={link}
               className="text-blue-gray-100 before:bg-blue-gray-100"
+              onClick={() => {
+                setOpenNav(false);
+              }}
             >
               {NAV_MAP[link]}
             </Link>
@@ -63,7 +66,10 @@ export default function NavBar() {
         >
           <Link
             href="/"
-            className="no-underline hover:before:scale-x-0  text-green-300"
+            className="no-underline hover:before:scale-x-0  text-green-200 hover:text-green-500 transition-all hover:font-extrabold"
+            onClick={() => {
+              setOpenNav(false);
+            }}
           >
             Coder2195
           </Link>
