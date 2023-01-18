@@ -38,18 +38,15 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div
-				className={`scroll-smooth fixed w-screen h-screen py-20 overflow-auto px-3 top-0`}
-			>
+			<div className="scroll-smooth fixed w-screen h-screen py-20 overflow-auto px-3 top-0">
 				<div id="bg" className="fixed left-0 top-0 w-full h-full -z-10"></div>
 				<NavBar />
 				<Background />
 				<NextNProgress
 					color="#808080"
 					height={6}
-					transformCSS={(css) => {
-						css = css.replaceAll("18px", "42px");
-						return <style>{css}</style>;
+					options={{
+						showSpinner: false,
 					}}
 				/>
 				<Component {...pageProps} />
