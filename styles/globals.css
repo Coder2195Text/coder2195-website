@@ -22,14 +22,11 @@
     @apply font-header font-bold;
   }
   body {
-    @apply font-body bg-white text-black text-2xl;
-  }
-  html[data-theme="dark"] {
-    @apply bg-black text-white;
+    @apply bg-black text-white font-body text-2xl;
   }
 
   a {
-    @apply relative text-blue-900 dark:text-blue-200 before:content-[''] before:absolute before:w-full before:h-0.5 before:rounded before:bottom-0 before:left-0 before:bg-blue-600 dark:before:bg-blue-400
+    @apply relative text-blue-200 before:content-[''] before:absolute before:w-full before:h-0.5 before:rounded before:bottom-0 before:left-0 before:bg-blue-400
       before:origin-right before:transform before:scale-x-0 before:transition-transform
       hover:before:origin-left hover:before:scale-x-100;
   }
@@ -56,9 +53,5 @@
 
 @layer components {
   @keyframes flash {
-  }
-
-  .dark {
-    @apply bg-black text-white;
   }
 }

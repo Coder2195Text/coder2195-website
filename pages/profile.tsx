@@ -2,7 +2,6 @@ import { NextSeo } from "next-seo";
 import Image from "next/image";
 import React, { FC } from "react";
 import { SiNextdotjs, SiPrisma, SiRust } from "react-icons/si";
-import { PageProps } from "./_app";
 
 const PRIDE_FLAGS: {
   [key: string]: string;
@@ -87,21 +86,15 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
       <br />
       English is not my strongpoint...
       <br />
-      I mean, you don't speak in Shakespearean English on a day to day basis, so
-      I advise abolishing high school English.
-      <br />
-      And for other subjects I don't know how I get 90's and 100's on tests I
+      As for other subjects, I don't know how I get 90's and 100's on tests I
       don't pay attention nor study for.
-      <br />
-      Maybe it's just other people who have skill issues... 🤔
     </>
   ),
   "Personal Info": (
     <>
-      I have ADHD + autism, and I am big on time management that people
-      criticize me for it.
-      <br />I am proud to say I am {Object.keys(PRIDE_FLAGS).join(" + ")}. Let
-      me throw some flags in your face.
+      I have ADHD + autism, and I adhere to strict time management.
+      <br /> {Object.keys(PRIDE_FLAGS).join(" + ")}. Homophobic/Transphobic I do
+      NOT tolerate.
       <br />
       <div>
         {Object.keys(PRIDE_FLAGS).map((flag) => (
@@ -117,10 +110,7 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
           </div>
         ))}
       </div>
-      Until I am able to escape from parents who don't support LGBTQ+ members,
-      my pronouns are he/him.
-      <br />
-      When the time comes, he/him/she/her/they/them are all fine.
+      He/him, after coming out, any pronouns are fine.
     </>
   ),
   Experience: (
@@ -179,7 +169,7 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
   ),
 };
 
-const Home: FC<PageProps> = ({ mounted }) => {
+const Home: FC = () => {
   const contents = (
     <>
       <h3>About Me</h3>
@@ -203,7 +193,7 @@ const Home: FC<PageProps> = ({ mounted }) => {
         title="Coder2195 - Profile"
         description="Contents about Coder2195"
       />
-      {mounted ? contents : undefined}
+      {contents}
     </>
   );
 };
