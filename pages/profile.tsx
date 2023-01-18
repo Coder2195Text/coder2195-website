@@ -93,8 +93,8 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
   "Personal Info": (
     <>
       I have ADHD + autism, and I adhere to strict time management.
-      <br /> {Object.keys(PRIDE_FLAGS).join(" + ")}. Let me throw some flags in
-      your face.
+      <br /> {Object.keys(PRIDE_FLAGS).join(" + ")}. Homophobic/Transphobic I do
+      NOT tolerate.
       <br />
       <div>
         {Object.keys(PRIDE_FLAGS).map((flag) => (
