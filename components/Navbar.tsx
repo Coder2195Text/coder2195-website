@@ -59,7 +59,7 @@ export default function NavBar() {
 	return (
 		<Navbar
 			fullWidth={true}
-			className="fixed left-0 top-0 bg-blue-gray-900 border-blue-gray-800 z-10 py-4"
+			className="fixed left-0 top-0 bg-blue-gray-900 z-10 py-4 border-none"
 		>
 			<div className="flex items-center justify-between text-blue-gray-100">
 				<Typography

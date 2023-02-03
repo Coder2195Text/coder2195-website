@@ -13,8 +13,12 @@ const PRIDE_FLAGS: {
 const LANGUAGE_EXPERIENCE: {
 	[key: string]: Array<{ src: string | JSX.Element; name: string }>;
 } = {
+	//indents here
+	//expected indentation here
 	Expert: [
-		{ src: "/icons/html5.svg", name: "HTML" },
+		{
+			src: "/icons/html5.svg", name: "HTML"
+		},
 		{ src: "/icons/css3.svg", name: "CSS" },
 		{
 			src: "/icons/javascript.svg",
@@ -58,11 +62,14 @@ const TOOLS_EXPERIENCE: {
 } = {
 	Proficient: [
 		{
+			//indents here
+			//expected indent here
 			src: "/icons/react.svg",
 			name: "React",
 		},
 		{
 			src: <SiNextdotjs size={64} className="inline-block" />,
+
 			name: "NextJS",
 		},
 		{
@@ -91,7 +98,7 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
 		</>
 	),
 	"Personal Info": (
-    <>
+		<>
 			I have ADHD + autism, and I adhere to strict time management.
 			<br />I am {Object.keys(PRIDE_FLAGS).join(" + ")}. Homophobia/Transphobia
 			I do NOT tolerate.

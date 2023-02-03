@@ -11,12 +11,9 @@ const Home: FC = () => {
       <div className="flex items-stretch">
         <div className="inline-block md:w-1/2">
           <BsFillExclamationTriangleFill size={32} className="inline-block" />{" "}
-          Warning, this user has been suspected of holding companies hostage for
-          code. Please report any suspicious activity to the CIA and/or FBI.{" "}
+          The average coder ¯\_(ツ)_/¯
           <br />
-          Your average strange coder who spends 8 hours at the computer!!! Don't
-          mind the above it's just a joke that discord users tend to have on
-          their profile.
+          Just look around...
           <br />
           <Link href="/profile">Read More...</Link>
         </div>

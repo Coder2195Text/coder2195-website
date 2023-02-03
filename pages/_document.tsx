@@ -3,7 +3,7 @@ import { FC } from "react";
 
 const Document: FC = () => {
   return (
-    <Html lang="en">
+    <Html lang="en" data-theme="dark">
       <Head />
       <body>
         <Main />

@@ -11,8 +11,24 @@ import NET from "vanta/dist/vanta.net.min";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const [vanta, setVanta] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  let progressBar: JSX.Element | undefined;
+  if (mounted) {
+    progressBar = (
+      <NextNProgress
+        color="#808080"
+        height={6}
+        options={{
+          showSpinner: false,
+        }}
+      />
+    );
+  }
   // @ts-ignore
   useEffect(() => {
+    setMounted(true);
+
     const element = document.getElementById("bg");
 
     if (!vanta && !element?.children.length) {
@@ -69,15 +85,14 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       </Head>
       <div id="bg" className="fixed left-0 top-0 w-full h-full -z-10"></div>
       <NavBar />
-      <NextNProgress
-        color="#808080"
-        height={6}
-        options={{
-          showSpinner: false,
-        }}
-      />
-      <div className="scroll-smooth fixed w-screen h-screen py-20 overflow-auto px-3 top-0">
-        <Component {...pageProps} />
+      {progressBar}
+      <div className="scroll-smooth fixed w-screen top-0 h-screen overflow-auto flex justify-center">
+        <div>
+          <div className="max-w-6xl px-3 bg-[rgba(100,100,100,.5)] rounded-3xl mt-24 py-3">
+            <Component {...pageProps} />
+          </div>
+          <br />
+        </div>
       </div>
     </>
   );
