@@ -32,6 +32,7 @@ export interface IProject {
     slug: string;
     title: string;
     embed: string;
+    coverImage: IAsset | null;
     description: IRichText;
     excerpt: string | null;
     featured: boolean

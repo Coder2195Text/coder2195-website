@@ -40,13 +40,13 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
+          minHeight: 100.0,
+          minWidth: 100.0,
           scale: 1,
           scaleMobile: 1,
           color: 0xff3f81,
           backgroundColor: 0x0,
-          points: 20.0,
+          points: 15.0,
           maxDistance: 27.0,
           spacing: 20.0,
         })
@@ -86,12 +86,13 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
       <div id="bg" className="fixed left-0 top-0 w-full h-full -z-10"></div>
       <NavBar />
       {progressBar}
-      <div className="scroll-smooth fixed w-screen top-0 h-screen overflow-auto flex justify-center">
+      <div className="scroll-smooth fixed w-screen top-[72px] h-[calc(100vh-72px)] flex justify-center overflow-auto">
         <div>
-          <div className="max-w-6xl px-3 bg-[rgba(100,100,100,.5)] rounded-3xl mt-24 py-3">
+          <br className="select-none h-4" />
+          <div className="max-w-6xl p-3 bg-[rgba(100,100,100,.5)] rounded-3xl">
             <Component {...pageProps} />
           </div>
-          <br />
+          <br className="select-none h-4" />
         </div>
       </div>
     </>
