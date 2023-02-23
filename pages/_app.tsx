@@ -7,7 +7,7 @@ import Head from "next/head";
 import NextNProgress from "nextjs-progressbar";
 import * as THREE from "three";
 //@ts-ignore
-import NET from "vanta/dist/vanta.net.min";
+import CLOUDS from "vanta/dist/vanta.clouds.min";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
 	const [vanta, setVanta] = useState(0);
@@ -33,22 +33,21 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 
 		if (!vanta && !element?.children.length) {
 			setVanta(
-				NET({
+				CLOUDS({
 					el: element,
 					//@ts-ignore
 					THREE,
 					mouseControls: true,
 					touchControls: true,
 					gyroControls: false,
-					minHeight: 100.0,
-					minWidth: 100.0,
-					scale: 1,
-					scaleMobile: 1,
-					color: 0xff3f81,
-					backgroundColor: 0x0,
-					points: 15.0,
-					maxDistance: 27.0,
-					spacing: 20.0,
+					minHeight: 200.0,
+					minWidth: 200.0,
+					skyColor: 0x0,
+					cloudColor: 0x0,
+					cloudShadowColor: 0x501818,
+					sunColor: 0xf118ff,
+					sunGlareColor: 0x3090ff,
+					sunlightColor: 0xff,
 				})
 			);
 		}

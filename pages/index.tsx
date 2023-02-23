@@ -27,7 +27,7 @@ const Home: FC = () => {
           />
         </div>
       </div>
-      <hr className="border-dotted border-blue-gray-900 dark:border-blue-gray-100 my-5" />
+      <hr className="border-dotted my-5" />
       <h5>Projects</h5>
       <div> Work in progress </div>
       <h5>Blog Posts</h5>
