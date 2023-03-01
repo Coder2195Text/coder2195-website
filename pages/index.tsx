@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { BsFillExclamationTriangleFill } from "react-icons/bs";
+import ActivityStatus from "../components/ActivityStatus";
 
 const Home: FC = () => {
   const contents = (
@@ -27,6 +28,8 @@ const Home: FC = () => {
           />
         </div>
       </div>
+      <h5>Activity</h5>
+      <ActivityStatus />
       <hr className="border-dotted my-5" />
       <h5>Projects</h5>
       <div> Work in progress </div>
