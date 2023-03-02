@@ -4,7 +4,6 @@ import { MdDoNotDisturbOn } from "react-icons/md";
 
 import { Activity, useLanyardWS } from "use-lanyard";
 import { BsTriangleFill } from "react-icons/bs";
-import { formatDuration, intervalToDuration } from "date-fns";
 
 const STATUS_MAP = {
   online: <FaWifi color="green" className="inline" />,
@@ -19,6 +18,23 @@ const STATUS_NAMES = {
   dnd: "Do Not Disturb",
   offline: "Offline",
 };
+
+function formatColonDuration(duration: number) {
+  //calc seconds minutes and hours
+  let seconds = Math.floor((duration / 1000) % 60);
+  let minutes = Math.floor((duration / (1000 * 60)) % 60);
+  let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+
+  let returnStr = "";
+  if (hours > 0) returnStr = `${hours}:`;
+  if (minutes > 0) returnStr += `${minutes}:`;
+  else returnStr += "0:";
+  if (seconds < 10)
+    returnStr += `0${seconds}`; //add a zero if seconds is less than 10
+  else returnStr += seconds;
+
+  return returnStr;
+}
 
 const ActivityStatus: FC = () => {
   let data = useLanyardWS("1016862766079938662");
@@ -49,13 +65,7 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
   const [collapsed, setCollapsed] = useState(true);
 
   const playingDuration = activity.timestamps?.start
-    ? `Playing for ${formatDuration(
-      intervalToDuration({
-        start: new Date(activity.timestamps.start),
-        end: new Date(time),
-      }),
-      { format: ["hours", "minutes"] }
-    )}`
+    ? `Playing for ${formatColonDuration(time - activity.timestamps.start)}`
     : "";
 
   const progressBar =
@@ -70,8 +80,12 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
           className="w-full"
         ></progress>
         <div className="w-full flex justify-between">
-          <span>Start</span>
-          <span>End</span>
+          <span>0:00</span>
+          <span>
+            {formatColonDuration(
+              activity.timestamps.end - activity.timestamps.start
+            )}
+          </span>
         </div>
       </div>
     ) : (
@@ -88,7 +102,7 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
         />
         <img
           src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}`}
-          className="w-10 absolute right-0 bottom-0"
+          className="w-1/2 absolute right-0 bottom-0"
           alt={activity.assets.small_text}
         />
       </div>

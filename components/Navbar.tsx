@@ -68,7 +68,7 @@ const NavBar: FC = () => {
         >
           <Link
             href="/"
-            className="no-underline hover:before:scale-x-0  text-green-200 hover:text-green-500 transition-all hover:font-extrabold"
+            className="no-underline hover:before:scale-x-0 text-green-200 hover:text-green-500 transition-all hover:font-extrabold"
             onClick={() => {
               setOpenNav(false);
             }}
