@@ -4,6 +4,7 @@ import { MdDoNotDisturbOn } from "react-icons/md";
 
 import { Activity, useLanyardWS } from "use-lanyard";
 import { BsTriangleFill } from "react-icons/bs";
+import Collapsible from "./Collapsible";
 
 const STATUS_MAP = {
   online: <FaWifi color="green" className="inline" />,
@@ -63,8 +64,6 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
   activity,
   time,
 }) => {
-  const [collapsed, setCollapsed] = useState(true);
-
   const playingDuration = activity.timestamps?.start
     ? `Playing for ${formatColonDuration(time - activity.timestamps.start)}`
     : "";
@@ -130,31 +129,16 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
   );
 
   return (
-    <div
-      className={`${collapsed
-          ? "bg-opacity-10 hover:bg-opacity-30"
-          : "bg-opacity-50 hover:bg-opacity-70"
-        } 
-          bg-gray-900 rounded-2xl p-4 overflow-hidden transition-all duration-500`}
+    <Collapsible
+      color="bg-gray-900"
+      title={
+        <span>
+          Playing <b>{activity.name}</b>
+        </span>
+      }
     >
-      <button
-        onClick={() => {
-          setCollapsed(!collapsed);
-        }}
-        className="w-full"
-      >
-        <div className="w-full flex justify-between content-between items-center">
-          <span>
-            Playing <b>{activity.name}</b>{" "}
-          </span>
-          <BsTriangleFill
-            className={`inline ${collapsed ? "rotate-90" : "rotate-180"
-              } transition-all`}
-          />
-        </div>
-        {collapsed ? [] : details}
-      </button>
-    </div>
+      {details}
+    </Collapsible>
   );
 };
 
