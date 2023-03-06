@@ -1,3 +1,4 @@
+import { Tooltip } from "@material-tailwind/react";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import React, { FC } from "react";
@@ -9,6 +10,15 @@ const PRIDE_FLAGS: {
   Genderfluid: "/pride/genderfluid.svg",
   Gynesexual: "/pride/gynesexual.svg",
 };
+
+function* intersperse(a: any[], delim: any) {
+  let first = true;
+  for (const x of a) {
+    if (!first) yield delim;
+    first = false;
+    yield x;
+  }
+}
 
 const LANGUAGE_EXPERIENCE: {
   [key: string]: Array<{ src: string | JSX.Element; name: string }>;
@@ -63,8 +73,10 @@ const TOOLS_EXPERIENCE: {
 } = {
   Proficient: [
     {
-      //indents here
-      //expected indent here
+      src: "/icons/neovim.svg",
+      name: "Neovim",
+    },
+    {
       src: "/icons/react.svg",
       name: "React",
     },
@@ -89,8 +101,10 @@ const TOOLS_EXPERIENCE: {
 const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
   Education: (
     <>
-      Hello, I'm Coder2195. I'm just a random high school junior developer who
-      is trying to wrestle out the tough parts of a programming career... :')
+      A random high school junior developer who is trying to wrestle out the
+      tough parts of a programming career... :')
+      <br />
+      A STEM fan, and I love to learn new things.
       <br />
       English is not my strongpoint...
       <br />
@@ -101,24 +115,19 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
   "Personal Info": (
     <>
       I have ADHD + autism, and I adhere to strict time management.
-      <br />I am {Object.keys(PRIDE_FLAGS).join(" + ")}. Homophobia/Transphobia
-      I do NOT tolerate.
+      <br />I am{" "}
+      {[
+        ...intersperse(
+          Object.keys(PRIDE_FLAGS).map((flag) => (
+            <span key={flag}>
+              {flag} <img src={PRIDE_FLAGS[flag]} className="inline h-6" />
+            </span>
+          )),
+          " + "
+        ),
+      ]}
+      . Homophobia/Transphobia I do NOT tolerate.
       <br />
-      <div>
-        {Object.keys(PRIDE_FLAGS).map((flag) => (
-          <div key={flag} className="inline-block w-full lg:w-1/2">
-            <h6>{flag}</h6>
-            <Image
-              src={PRIDE_FLAGS[flag]}
-              alt={flag}
-              className="w-full"
-              width={800}
-              height={480}
-              priority
-            />
-          </div>
-        ))}
-      </div>
       He/him, after coming out, any pronouns are fine.
     </>
   ),
@@ -129,20 +138,22 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
       {Object.keys(LANGUAGE_EXPERIENCE).map((level) => (
         <div key={level}>
           {LANGUAGE_EXPERIENCE[level].map((icon) => (
-            <span key={icon.name}>
-              {typeof icon.src !== "string" ? (
-                icon.src
-              ) : (
-                <Image
-                  className="inline-block"
-                  height={64}
-                  width={64}
-                  src={icon.src}
-                  alt={icon.name}
-                  priority
-                />
-              )}
-            </span>
+            <Tooltip content={icon.name}>
+              <span key={icon.name}>
+                {typeof icon.src !== "string" ? (
+                  icon.src
+                ) : (
+                  <Image
+                    className="inline-block"
+                    height={64}
+                    width={64}
+                    src={icon.src}
+                    alt={icon.name}
+                    priority
+                  />
+                )}
+              </span>
+            </Tooltip>
           ))}{" "}
           - {level}
         </div>
@@ -151,20 +162,22 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
       {Object.keys(TOOLS_EXPERIENCE).map((level) => (
         <div key={level}>
           {TOOLS_EXPERIENCE[level].map((icon) => (
-            <span key={icon.name}>
-              {typeof icon.src !== "string" ? (
-                icon.src
-              ) : (
-                <Image
-                  width={64}
-                  height={64}
-                  src={icon.src}
-                  alt={icon.name}
-                  className="inline-block"
-                  priority
-                />
-              )}
-            </span>
+            <Tooltip content={icon.name}>
+              <span key={icon.name}>
+                {typeof icon.src !== "string" ? (
+                  icon.src
+                ) : (
+                  <Image
+                    width={64}
+                    height={64}
+                    src={icon.src}
+                    alt={icon.name}
+                    className="inline-block"
+                    priority
+                  />
+                )}
+              </span>
+            </Tooltip>
           ))}{" "}
           - {level}
         </div>
@@ -189,7 +202,7 @@ const Home: FC = () => {
         {Object.keys(PROFILE_SECTIONS).map((section) => (
           <div
             key={section}
-            className="inline-block w-full md:w-1/2 align-top"
+            className="inline-block w-full align-top md:w-1/2"
             id={section.toLowerCase()}
           >
             <h5>{section}</h5>

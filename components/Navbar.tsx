@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { FaFolderOpen } from "react-icons/fa";
 import { BiLink, BiNotepad } from "react-icons/bi";
 import { BsPersonCircle } from "react-icons/bs";
@@ -13,22 +13,22 @@ import Link from "next/link";
 const NAV_MAP: { [key: string]: JSX.Element } = {
   "/profile": (
     <>
-      <BsPersonCircle className="pr-1 inline-block" /> About Me
+      <BsPersonCircle className="inline-block pr-1" /> About Me
     </>
   ),
   "/projects": (
     <>
-      <FaFolderOpen className="pr-1 inline-block" /> Projects
+      <FaFolderOpen className="inline-block pr-1" /> Projects
     </>
   ),
   "/blog": (
     <>
-      <BiNotepad className="pr-1 inline-block" /> Blog
+      <BiNotepad className="inline-block pr-1" /> Blog
     </>
   ),
   "/profile#socials": (
     <>
-      <BiLink className="pr-1 inline-block" /> Socials
+      <BiLink className="inline-block pr-1" /> Socials
     </>
   ),
 };
@@ -37,9 +37,9 @@ const NavBar: FC = () => {
   const [openNav, setOpenNav] = useState(false);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="flex flex-col gap-2 mt-2 mb-4 lg:flex-row lg:gap-6 lg:items-center lg:mt-0 lg:mb-0">
       {Object.keys(NAV_MAP).map((link) => (
-        <Typography key={link} as="li" className="p-1 font-header text-xl">
+        <Typography key={link} as="li" className="p-1 text-xl font-header">
           <span>
             <Link
               href={link}
@@ -59,16 +59,16 @@ const NavBar: FC = () => {
   return (
     <Navbar
       fullWidth={true}
-      className="fixed left-0 top-0 bg-blue-gray-900 z-10 py-4 border-none"
+      className="fixed top-0 left-0 z-10 py-4 bg-blue-gray-900 border-none"
     >
-      <div className="flex items-center justify-between text-blue-gray-100">
+      <div className="flex justify-between items-center text-blue-gray-100">
         <Typography
           as="li"
-          className="mr-4 py-1 font-header text-2xl font-bold"
+          className="py-1 mr-4 text-2xl font-bold font-header"
         >
           <Link
             href="/"
-            className="no-underline hover:before:scale-x-0 text-green-200 hover:text-green-500 transition-all hover:font-extrabold"
+            className="text-green-200 no-underline transition-all hover:font-extrabold hover:text-green-500 hover:before:scale-x-0"
             onClick={() => {
               setOpenNav(false);
             }}
@@ -79,7 +79,7 @@ const NavBar: FC = () => {
         <div className="hidden lg:block">{navList}</div>
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit lg:hidden"
+          className="ml-auto w-6 h-6 lg:hidden text-inherit"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >
@@ -87,7 +87,7 @@ const NavBar: FC = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              className="h-6 w-6"
+              className="w-6 h-6"
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
@@ -101,7 +101,7 @@ const NavBar: FC = () => {
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               strokeWidth={2}

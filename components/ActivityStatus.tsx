@@ -3,7 +3,6 @@ import { FaPowerOff, FaWifi, FaMoon } from "react-icons/fa";
 import { MdDoNotDisturbOn } from "react-icons/md";
 
 import { Activity, useLanyardWS } from "use-lanyard";
-import { BsTriangleFill } from "react-icons/bs";
 import Collapsible from "./Collapsible";
 
 const STATUS_MAP = {
@@ -81,7 +80,7 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
             style={{ width: `${progress * 100}%` }}
           ></div>
         </div>
-        <div className="w-full flex justify-between">
+        <div className="flex justify-between w-full">
           <span>0:00</span>
           <span>
             {formatColonDuration(
@@ -95,7 +94,7 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
     );
 
   const activityImages = activity.assets ? (
-    <div className="w-full flex items-center">
+    <div className="flex items-center w-full">
       <div className="relative">
         <img
           src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}`}
@@ -104,11 +103,11 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
         />
         <img
           src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}`}
-          className="w-5/12 absolute right-0 bottom-0"
+          className="absolute right-0 bottom-0 w-5/12"
           alt={activity.assets.small_text}
         />
       </div>
-      <div className="inline-block w-full m-auto text-sm sm:text-xl md:text-2xl">
+      <div className="inline-block m-auto w-full text-sm sm:text-xl md:text-2xl">
         {activity.details}
         <br />
         {activity.state}

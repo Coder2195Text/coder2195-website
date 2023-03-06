@@ -15,10 +15,10 @@ export interface IBlogPost {
     date: string;
     excerpt: string | null;
     coverImage: IAsset | null;
-    content: IRichText
+    content: IRichText;
     slug: string;
     previous: IBlogPost | null;
-    next: IBlogPost | null
+    next: IBlogPost | null;
 }
 
 export interface IChangeLogEntry {
@@ -35,11 +35,5 @@ export interface IProject {
     coverImage: IAsset | null;
     description: IRichText;
     excerpt: string | null;
-    featured: boolean
-}
-
-export interface ISocial {
-    icon: IAsset;
-    url: string;
-    target: string;
+    featured: boolean;
 }

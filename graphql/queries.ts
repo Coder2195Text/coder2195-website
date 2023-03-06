@@ -1,119 +1,111 @@
 import { gql, GraphQLClient } from "graphql-request";
-import { IBlogPost, IProject, ISocial } from "./types";
+import { IBlogPost, IProject } from "./types";
 
-const hygraph = new GraphQLClient(
-    process.env.HYGRAPH_URL as string
-);
-
+const hygraph = new GraphQLClient(process.env.HYGRAPH_URL as string);
 
 export async function fetchBlogPreviews() {
     const { blogPosts } = await hygraph.request<{ blogPosts: IBlogPost[] }>(gql`
-        query {
-            blogPosts(orderBy: createdAt_DESC) {
-                slug
-                excerpt
-                title
-            }
-        }
-    `)
+    query {
+      blogPosts(orderBy: createdAt_DESC) {
+        slug
+        excerpt
+        title
+      }
+    }
+  `);
     return blogPosts;
 }
 
 export async function fetchBlogPost(slug: string) {
-    const { blogPost } = await hygraph.request<{ blogPost: IBlogPost }>(gql`
-        query ($slug: String!){
-            blogPost(where: { slug: $slug }) {
-                title
-                excerpt
-                coverImage {
-                    url
-                    width
-                    height
-                }
-                content {
-                    markdown
-                }
-                date
-                next {
-                    slug
-                }
-                previous {
-                    slug
-                }
-            }
+    const { blogPost } = await hygraph.request<{ blogPost: IBlogPost }>(
+        gql`
+      query ($slug: String!) {
+        blogPost(where: { slug: $slug }) {
+          title
+          excerpt
+          coverImage {
+            url
+            width
+            height
+          }
+          content {
+            markdown
+          }
+          date
+          next {
+            slug
+          }
+          previous {
+            slug
+          }
         }
-    `, { slug })
+      }
+    `,
+        { slug }
+    );
     return blogPost;
 }
 
 export async function fetchBlogSlugs() {
     const { blogPosts } = await hygraph.request<{ blogPosts: IBlogPost[] }>(gql`
-        query {
-            blogPosts {
-                slug
-            }
-        }
-    `)
-    return blogPosts.map((post: IBlogPost) => { return post.slug })
-}
-
-export async function fetchSocials() {
-    const { socials } = await hygraph.request<{ socials: ISocial[] }>(gql`
-        query {
-            socials {
-                icon {
-                    url
-                }
-                url
-                target
-            }
-        }
-    `)
-    return socials
+    query {
+      blogPosts {
+        slug
+      }
+    }
+  `);
+    return blogPosts.map((post: IBlogPost) => {
+        return post.slug;
+    });
 }
 
 export async function fetchProjectPreviews() {
     const { projects } = await hygraph.request<{ projects: IProject[] }>(gql`
-        query {
-            projects(orderBy: createdAt_DESC) {
-                slug
-                excerpt
-                title
-            }
-        }
-    `)
+    query {
+      projects(orderBy: createdAt_DESC) {
+        slug
+        excerpt
+        title
+      }
+    }
+  `);
     return projects;
 }
 
 export async function fetchProject(slug: string) {
-    const { project } = await hygraph.request<{ project: IProject }>(gql`
-        query ($slug: String!){
-            project(where: { slug: $slug }) {
-                title
-                excerpt
-                embed
-                changeLogEntries {
-                    version
-                    description {
-                        markdown
-                    }
-                }
-                description {
-                    markdown
-                }
+    const { project } = await hygraph.request<{ project: IProject }>(
+        gql`
+      query ($slug: String!) {
+        project(where: { slug: $slug }) {
+          title
+          excerpt
+          embed
+          changeLogEntries {
+            version
+            description {
+              markdown
             }
+          }
+          description {
+            markdown
+          }
         }
-    `, { slug })
+      }
+    `,
+        { slug }
+    );
     return project;
 }
 
 export async function fetchProjectSlugs() {
     const { projects } = await hygraph.request<{ projects: IProject[] }>(gql`
-        query {
-            projects {
-                slug
-            }
-        }
-    `)
-    return projects.map((post: IProject) => { return post.slug })
+    query {
+      projects {
+        slug
+      }
+    }
+  `);
+    return projects.map((post: IProject) => {
+        return post.slug;
+    });
 }

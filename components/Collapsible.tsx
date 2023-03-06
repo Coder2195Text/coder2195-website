@@ -22,7 +22,7 @@ const Collapsible: FC<{
         }}
         className="w-full"
       >
-        <div className="w-full flex justify-between content-between items-center">
+        <div className="flex justify-between content-between items-center w-full">
           {title}{" "}
           <BsTriangleFill
             className={`inline ${collapsed ? "rotate-90" : "rotate-180"

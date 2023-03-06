@@ -10,7 +10,6 @@ import * as THREE from "three";
 import CLOUDS from "vanta/dist/vanta.clouds.min";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
-	const [vanta, setVanta] = useState(0);
 	const [mounted, setMounted] = useState(false);
 
 	let progressBar: JSX.Element | undefined;
@@ -28,29 +27,6 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 	// @ts-ignore
 	useEffect(() => {
 		setMounted(true);
-
-		const element = document.getElementById("bg");
-
-		if (!vanta && !element?.children.length) {
-			setVanta(
-				CLOUDS({
-					el: element,
-					//@ts-ignore
-					THREE,
-					mouseControls: false,
-					touchControls: false,
-					gyroControls: false,
-					minHeight: 200.0,
-					minWidth: 200.0,
-					skyColor: 0x0,
-					cloudColor: 0x0,
-					cloudShadowColor: 0x501818,
-					sunColor: 0xf118ff,
-					sunGlareColor: 0x3090ff,
-					sunlightColor: 0xff,
-				})
-			);
-		}
 	}, []);
 	return (
 		<>
@@ -82,7 +58,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div id="bg" className="fixed left-0 top-0 w-full h-full -z-10"></div>
+			<iframe
+				src="https://background3d.coder2195.repl.co/"
+				className="fixed left-0 top-0 w-full h-full -z-10"
+			/>
 			<NavBar />
 			{progressBar}
 			<div className="scroll-smooth fixed w-screen top-[72px] h-[calc(100vh-72px)] flex justify-center  overflow-auto">
