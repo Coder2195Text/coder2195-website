@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { FC } from "react";
-import Card from "../components/Card";
+import CardLink from "../components/CardLink";
 import { fetchProjectPreviews } from "../graphql/queries";
 import { IProject } from "../graphql/types";
 
@@ -27,12 +27,8 @@ const Blog: FC<Props> = ({ projects }) => {
       <h3 id="title">Projects</h3>
       <br />
       {projects.map((project) => (
-        <Link
-          href={`/projects/${project.slug}`}
-          key={project.slug}
-          className="hover:before:scale-x-0"
-        >
-          <Card
+          <CardLink
+            href={`/projects/${project.slug}`}
             key={project.slug}
             date={project.date}
             title={project.title}
@@ -51,8 +47,7 @@ const Blog: FC<Props> = ({ projects }) => {
             image={project.coverImage?.url}
           >
             {project.excerpt}
-          </Card>
-        </Link>
+          </CardLink>
       ))}
     </>
   );

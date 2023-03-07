@@ -1,12 +1,14 @@
+import Link from "next/link";
 import { FC, ReactNode, useEffect, useState } from "react";
 
-const Card: FC<{
+const CardLink: FC<{
   title: string;
   date: string | null | undefined;
   children: ReactNode;
   location: ReactNode;
   image: string | null | undefined;
-}> = ({ title, children, date, location, image }) => {
+  href: string
+}> = ({ title, children, date, location, image, href}) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
@@ -14,6 +16,10 @@ const Card: FC<{
   if (mounted)
     return (
       //cool hover effect
+      <Link
+          href={href}
+          className="hover:before:scale-x-0"
+        >
       <div className="inline-block overflow-hidden max-w-md bg-gray-800 rounded-lg shadow-md duration-300 hover:bg-gray-900">
         {image ? (
           <div
@@ -46,8 +52,8 @@ const Card: FC<{
           {children}
         </div>
       </div>
-    );
+      </Link>);
   return <> </>;
 };
 
-export default Card;
+export default CardLink;
