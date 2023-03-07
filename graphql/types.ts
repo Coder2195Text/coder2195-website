@@ -25,6 +25,7 @@ export interface IChangeLogEntry {
     version: string;
     project: IProject;
     description: IRichText;
+    date: string;
 }
 
 export interface IProject {
@@ -36,4 +37,6 @@ export interface IProject {
     description: IRichText;
     excerpt: string | null;
     featured: boolean;
+    date: string;
+    repo: string | null;
 }

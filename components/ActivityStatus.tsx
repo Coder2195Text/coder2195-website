@@ -76,7 +76,7 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
       <div>
         <div className="w-full bg-gray-700 rounded-full">
           <div
-            className={`bg-blue-600 font-medium text-blue-100 text-center p-0.5 my-2 pt-2 leading-none rounded-full`}
+            className="p-0.5 pt-2 my-2 font-medium leading-none text-center text-blue-100 bg-blue-600 rounded-full"
             style={{ width: `${progress * 100}%` }}
           ></div>
         </div>
