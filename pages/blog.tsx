@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import { FC } from "react";
+import Layout from "../components/Layout";
 import { fetchBlogPreviews } from "../graphql/queries";
 import { IBlogPost } from "../graphql/types";
 import { usePageUrl } from "./_app";
@@ -29,13 +30,13 @@ const Blog: FC<Props> = ({ posts }) => {
     </>
   );
   return (
-    <>
+    <Layout>
       <NextSeo
         title="Coder2195 - Blog"
         description="The blog page of coder2195's website"
       />
       {contents}
-    </>
+    </Layout>
   );
 };
 

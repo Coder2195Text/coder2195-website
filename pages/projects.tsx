@@ -1,8 +1,8 @@
 import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
-import Link from "next/link";
 import { FC } from "react";
 import CardLink from "../components/CardLink";
+import Layout from "../components/Layout";
 import { fetchProjectPreviews } from "../graphql/queries";
 import { IProject } from "../graphql/types";
 import { usePageUrl } from "./_app";
@@ -56,13 +56,13 @@ const Projects: FC<Props> = ({ projects }) => {
     </>
   );
   return (
-    <>
+    <Layout>
       <NextSeo
         title="Coder2195 - Projects"
         description="The projects page of coder2195's website"
       />
       {contents}
-    </>
+    </Layout>
   );
 };
 

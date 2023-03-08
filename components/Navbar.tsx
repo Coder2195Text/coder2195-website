@@ -61,7 +61,7 @@ const NavBar: FC<{ highlight: string }> = ({ highlight }) => {
           variants={{
             hidden: {
               opacity: 0,
-              y: 40,
+              y: 32,
             },
             show: {
               opacity: 1,

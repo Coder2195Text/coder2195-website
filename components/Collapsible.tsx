@@ -29,7 +29,7 @@ const Collapsible: FC<{
               } transition-all`}
           />
         </div>
-        {collapsed ? [] : children}
+        {!collapsed && children}
       </button>
     </div>
   );

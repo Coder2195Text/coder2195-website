@@ -72,7 +72,7 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
     (activity.timestamps?.end! - activity.timestamps?.start!);
 
   const progressBar =
-    activity.timestamps?.start && activity.timestamps?.end ? (
+    (activity.timestamps?.start && activity.timestamps?.end) && (
       <div>
         <div className="w-full bg-gray-700 rounded-full">
           <div
@@ -89,11 +89,9 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
           </span>
         </div>
       </div>
-    ) : (
-      []
-    );
+    )
 
-  const activityImages = activity.assets ? (
+  const activityImages = activity.assets &&
     <div className="flex items-center w-full">
       <div className="relative">
         <img
@@ -113,9 +111,6 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
         {activity.state}
       </div>
     </div>
-  ) : (
-    []
-  );
 
   const details = (
     <div>

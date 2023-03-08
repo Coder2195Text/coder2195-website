@@ -5,6 +5,7 @@ import NavBar from "../components/Navbar";
 import { createContext, FC, useContext, useEffect, useState } from "react";
 import Head from "next/head";
 import NextNProgress from "nextjs-progressbar";
+import { AnimatePresence, motion } from "framer-motion";
 
 const PageUrlContext = createContext<{
 	urlHighlight: string;
@@ -15,7 +16,7 @@ export function usePageUrl() {
 	return useContext(PageUrlContext);
 }
 
-const App: FC<AppProps> = ({ Component, pageProps }) => {
+const App: FC<AppProps> = ({ Component, pageProps, router }) => {
 	const [mounted, setMounted] = useState(false);
 
 	const [urlHighlight, setUrlHighlight] = useState("");
@@ -37,56 +38,59 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 		setMounted(true);
 	}, []);
 	return (
-		<PageUrlContext.Provider
-			value={{
-				urlHighlight,
-				setUrlHighlight,
-			}}
-		>
-			<DefaultSeo
-				title="Coder2195's - 404 Not Found"
-				additionalMetaTags={[
-					{
-						name: "msapplication-TileColor",
-						content: "#000000",
-					},
-					{
-						name: "theme-color",
-						content: "#000000",
-					},
-				]}
-				openGraph={{
-					images: [
-						{
-							url: "https://coder2195.vercel.app/favicon.ico",
-							width: 256,
-							height: 256,
-							type: "image/png",
-						},
-					],
-					siteName: "Coder2195's Website",
+		<>
+			<PageUrlContext.Provider
+				value={{
+					urlHighlight,
+					setUrlHighlight,
 				}}
-			/>
-			<Head>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<iframe
-				src="https://background3d.coder2195.repl.co/"
-				className="overflow-hidden fixed top-0 left-0 w-full h-full -z-10"
-			/>
-			<NavBar highlight={urlHighlight} />
-			{progressBar}
-			<div className="scroll-smooth fixed w-screen top-[72px] h-[calc(100vh-72px)] flex justify-center  overflow-auto">
-				<div>
-					<br className="h-4 select-none" />
-					<div className="max-w-6xl p-3 bg-[rgba(100,100,100,.5)] rounded-3xl w-screen break-words">
-						<Component {...pageProps} />
+			>
+				<DefaultSeo
+					title="Coder2195's - 404 Not Found"
+					additionalMetaTags={[
+						{
+							name: "msapplication-TileColor",
+							content: "#000000",
+						},
+						{
+							name: "theme-color",
+							content: "#000000",
+						},
+					]}
+					openGraph={{
+						images: [
+							{
+								url: "https://coder2195.vercel.app/favicon.ico",
+								width: 256,
+								height: 256,
+								type: "image/png",
+							},
+						],
+						siteName: "Coder2195's Website",
+					}}
+				/>
+				<Head>
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
+				<iframe
+					src="https://background3d.coder2195.repl.co/"
+					className="overflow-hidden fixed top-0 left-0 w-full h-full -z-10"
+				/>
+				<NavBar highlight={urlHighlight} />
+				{progressBar}
+				<div className="scroll-smooth fixed w-screen top-[72px] h-[calc(100vh-72px)] flex justify-center  overflow-auto">
+					<div>
+						<div className="max-w-6xl p-3 bg-[rgba(100,100,100,.5)] rounded-3xl w-screen break-words overflow-clip">
+							<AnimatePresence mode="wait" initial={false}>
+								<Component {...pageProps} key={router.asPath} />
+							</AnimatePresence>
+						</div>
+						<br className="h-8"/>
 					</div>
-					<br className="h-4 select-none" />
 				</div>
-			</div>
-		</PageUrlContext.Provider>
+			</PageUrlContext.Provider>
+		</>
 	);
 };
 
