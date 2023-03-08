@@ -5,6 +5,7 @@ import { FC } from "react";
 import CardLink from "../components/CardLink";
 import { fetchProjectPreviews } from "../graphql/queries";
 import { IProject } from "../graphql/types";
+import { usePageUrl } from "./_app";
 
 interface Props {
   projects: Array<IProject>;
@@ -20,13 +21,15 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Blog: FC<Props> = ({ projects }) => {
+const Projects: FC<Props> = ({ projects }) => {
+  usePageUrl().setUrlHighlight("/projects");
   const contents = (
     <>
       <h1></h1>
       <h3 id="title">Projects</h3>
       <br />
-      {projects.map((project) => (
+      <div className="">
+        {projects.map((project) => (
           <CardLink
             href={`/projects/${project.slug}`}
             key={project.slug}
@@ -48,7 +51,8 @@ const Blog: FC<Props> = ({ projects }) => {
           >
             {project.excerpt}
           </CardLink>
-      ))}
+        ))}
+      </div>
     </>
   );
   return (
@@ -62,4 +66,4 @@ const Blog: FC<Props> = ({ projects }) => {
   );
 };
 
-export default Blog;
+export default Projects;

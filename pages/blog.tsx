@@ -3,6 +3,7 @@ import { NextSeo } from "next-seo";
 import { FC } from "react";
 import { fetchBlogPreviews } from "../graphql/queries";
 import { IBlogPost } from "../graphql/types";
+import { usePageUrl } from "./_app";
 
 interface Props {
   posts: Array<IBlogPost>;
@@ -19,6 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Blog: FC<Props> = ({ posts }) => {
+  usePageUrl().setUrlHighlight("/blog");
   const contents = (
     <>
       <h3 id="title">Blog Posts</h3>

@@ -3,6 +3,7 @@ import { NextSeo } from "next-seo";
 import Image from "next/image";
 import React, { FC } from "react";
 import { SiNextdotjs, SiPrisma, SiRust } from "react-icons/si";
+import { usePageUrl } from "./_app";
 
 const PRIDE_FLAGS: {
   [key: string]: string;
@@ -194,7 +195,8 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
   ),
 };
 
-const Home: FC = () => {
+const Profile: FC = () => {
+  usePageUrl().setUrlHighlight("/profile");
   const contents = (
     <>
       <h3>About Me</h3>
@@ -223,4 +225,4 @@ const Home: FC = () => {
   );
 };
 
-export default Home;
+export default Profile;

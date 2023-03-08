@@ -2,15 +2,23 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import NavBar from "../components/Navbar";
-import { FC, useEffect, useState } from "react";
+import { createContext, FC, useContext, useEffect, useState } from "react";
 import Head from "next/head";
 import NextNProgress from "nextjs-progressbar";
-import * as THREE from "three";
-//@ts-ignore
-import CLOUDS from "vanta/dist/vanta.clouds.min";
+
+const PageUrlContext = createContext<{
+	urlHighlight: string;
+	setUrlHighlight: React.Dispatch<React.SetStateAction<string>>;
+}>(null!);
+
+export function usePageUrl() {
+	return useContext(PageUrlContext);
+}
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
 	const [mounted, setMounted] = useState(false);
+
+	const [urlHighlight, setUrlHighlight] = useState("");
 
 	let progressBar: JSX.Element | undefined;
 	if (mounted) {
@@ -29,7 +37,12 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 		setMounted(true);
 	}, []);
 	return (
-		<>
+		<PageUrlContext.Provider
+			value={{
+				urlHighlight,
+				setUrlHighlight,
+			}}
+		>
 			<DefaultSeo
 				title="Coder2195's - 404 Not Found"
 				additionalMetaTags={[
@@ -60,20 +73,20 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 			</Head>
 			<iframe
 				src="https://background3d.coder2195.repl.co/"
-				className="fixed left-0 top-0 w-full h-full -z-10"
+				className="overflow-hidden fixed top-0 left-0 w-full h-full -z-10"
 			/>
-			<NavBar />
+			<NavBar highlight={urlHighlight} />
 			{progressBar}
 			<div className="scroll-smooth fixed w-screen top-[72px] h-[calc(100vh-72px)] flex justify-center  overflow-auto">
 				<div>
-					<br className="select-none h-4" />
+					<br className="h-4 select-none" />
 					<div className="max-w-6xl p-3 bg-[rgba(100,100,100,.5)] rounded-3xl w-screen break-words">
 						<Component {...pageProps} />
 					</div>
-					<br className="select-none h-4" />
+					<br className="h-4 select-none" />
 				</div>
 			</div>
-		</>
+		</PageUrlContext.Provider>
 	);
 };
 

@@ -9,6 +9,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const NAV_MAP: { [key: string]: JSX.Element } = {
   "/profile": (
@@ -33,27 +34,61 @@ const NAV_MAP: { [key: string]: JSX.Element } = {
   ),
 };
 
-const NavBar: FC = () => {
+const NavBar: FC<{ highlight: string }> = ({ highlight }) => {
   const [openNav, setOpenNav] = useState(false);
 
   const navList = (
-    <ul className="flex flex-col gap-2 mt-2 mb-4 lg:flex-row lg:gap-6 lg:items-center lg:mt-0 lg:mb-0">
+    <motion.ul
+      className="flex flex-col gap-2 mt-2 mb-4 select-none lg:flex-row lg:gap-6 lg:items-center lg:mt-0 lg:mb-0"
+      variants={{
+        hidden: {
+          opacity: 0,
+        },
+        show: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.2,
+          },
+        },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       {Object.keys(NAV_MAP).map((link) => (
-        <Typography key={link} as="li" className="p-1 text-xl font-header">
-          <span>
-            <Link
-              href={link}
-              className="text-blue-gray-100 before:bg-blue-gray-100"
-              onClick={() => {
-                setOpenNav(false);
-              }}
-            >
-              {NAV_MAP[link]}
-            </Link>
-          </span>
-        </Typography>
+        <motion.li
+          className="p-1 text-xl font-header"
+          key={link}
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 40,
+            },
+            show: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                ease: "easeIn",
+                duration: 0.3,
+              },
+            },
+          }}
+        >
+          <Link
+            href={link}
+            className={`text-blue-gray-100 before:bg-blue-gray-100 m-auto ${link == highlight ? "before:scale-x-100" : undefined
+              }`}
+            onClick={(e) => {
+              if (link == highlight) {
+                e.preventDefault();
+              }
+              setOpenNav(false);
+            }}
+          >
+            {NAV_MAP[link]}
+          </Link>
+        </motion.li>
       ))}
-    </ul>
+    </motion.ul>
   );
 
   return (

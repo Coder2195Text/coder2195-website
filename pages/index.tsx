@@ -4,8 +4,10 @@ import Link from "next/link";
 import { FC } from "react";
 import { BsFillExclamationTriangleFill } from "react-icons/bs";
 import ActivityStatus from "../components/ActivityStatus";
+import { usePageUrl } from "./_app";
 
 const Home: FC = () => {
+  usePageUrl().setUrlHighlight("/");
   const contents = (
     <>
       <h3>Coder2195 the Great</h3>
@@ -18,7 +20,7 @@ const Home: FC = () => {
           <br />
           <Link href="/profile">Read More...</Link>
         </div>
-        <div className="hidden md:inline-block w-1/2 text-center">
+        <div className="hidden w-1/2 text-center md:inline-block">
           <Image
             src="/favicon.ico"
             alt=""
@@ -30,7 +32,7 @@ const Home: FC = () => {
       </div>
       <h5>Activity</h5>
       <ActivityStatus />
-      <hr className="border-dotted my-5" />
+      <hr className="my-5 border-dotted" />
       <h5>Projects</h5>
       <div> Work in progress </div>
       <h5>Blog Posts</h5>
