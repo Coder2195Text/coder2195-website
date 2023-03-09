@@ -27,11 +27,6 @@ const NAV_MAP: { [key: string]: JSX.Element } = {
       <BiNotepad className="inline-block pr-1" /> Blog
     </>
   ),
-  "/profile#socials": (
-    <>
-      <BiLink className="inline-block pr-1" /> Socials
-    </>
-  ),
 };
 
 const NavBar: FC<{ highlight: string }> = ({ highlight }) => {

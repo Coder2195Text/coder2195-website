@@ -140,8 +140,8 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
 			{Object.keys(LANGUAGE_EXPERIENCE).map((level) => (
 				<div key={level}>
 					{LANGUAGE_EXPERIENCE[level].map((icon) => (
-						<Tooltip content={icon.name}>
-							<span key={icon.name}>
+						<Tooltip content={icon.name} key={icon.name}>
+							<span>
 								{typeof icon.src !== "string" ? (
 									icon.src
 								) : (

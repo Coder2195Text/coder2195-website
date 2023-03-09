@@ -5,6 +5,8 @@ import { MdDoNotDisturbOn } from "react-icons/md";
 import { Activity, useLanyardWS } from "use-lanyard";
 import Collapsible from "./Collapsible";
 
+import { motion } from "framer-motion";
+
 const STATUS_MAP = {
   online: <FaWifi color="green" className="inline" />,
   idle: <FaMoon color="yellow" className="inline" />,
@@ -71,8 +73,8 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
     (time - activity.timestamps?.start!) /
     (activity.timestamps?.end! - activity.timestamps?.start!);
 
-  const progressBar =
-    (activity.timestamps?.start && activity.timestamps?.end) && (
+  const progressBar = activity.timestamps?.start &&
+    activity.timestamps?.end && (
       <div>
         <div className="w-full bg-gray-700 rounded-full">
           <div
@@ -89,9 +91,9 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
           </span>
         </div>
       </div>
-    )
+    );
 
-  const activityImages = activity.assets &&
+  const activityImages = activity.assets && (
     <div className="flex items-center w-full">
       <div className="relative">
         <img
@@ -111,15 +113,21 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
         {activity.state}
       </div>
     </div>
+  );
 
   const details = (
-    <div>
+    <motion.div
+      initial={{ scale: "0%" }}
+      animate={{ scale: 1 }}
+      exit={{ scale: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <hr className="my-4" />
       {playingDuration}
       <br />
       {progressBar}
       {activityImages}
-    </div>
+    </motion.div>
   );
 
   return (
