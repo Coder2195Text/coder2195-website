@@ -73,13 +73,9 @@ const App: FC<AppProps> = ({ Component, pageProps, router }) => {
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
-				<iframe
-					src="https://background3d.coder2195.repl.co/"
-					className="overflow-hidden fixed top-0 left-0 w-full h-full -z-10"
-				/>
 				<NavBar highlight={urlHighlight} />
 				{progressBar}
-				<div className="scroll-smooth pt-[72px] flex justify-center overflow-auto ">
+				<div className="flex overflow-auto justify-center scroll-smooth pt-[72px]">
 					<div className="py-[2.5vw]">
 						<div className="max-w-6xl p-3 bg-[rgba(100,100,100,.5)] rounded-3xl break-words overflow-clip w-[95vw]">
 							<AnimatePresence mode="wait" initial={false}>
@@ -88,6 +84,10 @@ const App: FC<AppProps> = ({ Component, pageProps, router }) => {
 						</div>
 					</div>
 				</div>
+				<iframe
+					src="https://background3d.coder2195.repl.co/"
+					className="overflow-hidden fixed top-0 left-0 w-full h-full -z-10"
+				/>
 			</PageUrlContext.Provider>
 		</>
 	);
