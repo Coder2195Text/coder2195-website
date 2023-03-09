@@ -81,7 +81,7 @@ const App: FC<AppProps> = ({ Component, pageProps, router }) => {
 				{progressBar}
 				<div className="scroll-smooth fixed w-screen top-[72px] h-[calc(100vh-72px)] flex justify-center overflow-auto">
 					<div className="pt-5 sm:pt-6 md:pt-7 lg:pt-8 xl:pt-9 2xl:pt-10 3xl:pt-11">
-						<div className="max-w-6xl p-3 bg-[rgba(100,100,100,.5)] rounded-3xl w-screen break-words overflow-clip">
+						<div className="max-w-6xl p-3 bg-[rgba(100,100,100,.5)] rounded-3xl break-words overflow-clip w-[95vw]">
 							<AnimatePresence mode="wait" initial={false}>
 								<Component {...pageProps} key={router.asPath} />
 							</AnimatePresence>
