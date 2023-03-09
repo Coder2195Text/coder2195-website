@@ -79,14 +79,13 @@ const App: FC<AppProps> = ({ Component, pageProps, router }) => {
 				/>
 				<NavBar highlight={urlHighlight} />
 				{progressBar}
-				<div className="scroll-smooth fixed w-screen top-[72px] h-[calc(100vh-72px)] flex justify-center overflow-auto">
-					<div className="pt-5 sm:pt-6 md:pt-7 lg:pt-8 xl:pt-9 2xl:pt-10 3xl:pt-11">
+				<div className="scroll-smooth pt-[72px] flex justify-center overflow-auto ">
+					<div className="py-[2.5vw]">
 						<div className="max-w-6xl p-3 bg-[rgba(100,100,100,.5)] rounded-3xl break-words overflow-clip w-[95vw]">
 							<AnimatePresence mode="wait" initial={false}>
 								<Component {...pageProps} key={router.asPath} />
 							</AnimatePresence>
 						</div>
-						<br className="h-11 sm:h-10 md:h-9 lg:h-8 xl:h-7 2xl:h-6 3xl:h-5" />
 					</div>
 				</div>
 			</PageUrlContext.Provider>
