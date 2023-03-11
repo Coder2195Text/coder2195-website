@@ -15,38 +15,31 @@ const CardLink: FC<{
 	}, []);
 	if (mounted)
 		return (
-			<Link href={href} className="block w-1/2 hover:before:scale-x-0">
-				<div className="overflow-hidden bg-gray-800 rounded-lg shadow-md duration-300 hover:bg-gray-900">
-					{image && (
-						<div
-							className="hidden w-full h-64 bg-center bg-cover md:block"
-							style={{ backgroundImage: `url(${image})` }}
-						></div>
-					)}
-					<div className="p-6">
-						<div className="flex justify-between items-center mb-4">
-							{date && (
-								<span className="text-sm font-medium text-gray-500 uppercase">
-									{date}
-								</span>
-							)}
-							<div className="flex items-center">
-								{image && (
-									<img
-										className="object-cover mr-2 w-8 h-8 rounded-full"
-										src={image}
-									/>
-								)}
-								{location && (
-									<span className="text-sm font-medium text-gray-700">
-										{location}
-									</span>
-								)}
-							</div>
-						</div>
-						<h4 className="mb-2 text-2xl font-bold text-gray-400">{title}</h4>
-						<div className="text-white">{children}</div>
+			<Link
+				href={href}
+				className="overflow-hidden p-1 w-full bg-gray-800 rounded-lg shadow-md duration-300 sm:w-1/2 md:w-1/3 filter brightness-100 hover:before:scale-x-0 hover:brightness-125"
+			>
+				{image && (
+					<img
+						className="block w-full h-1/2 bg-center bg-cover rounded-md"
+						src={image}
+					/>
+				)}
+				<div className="p-6">
+					<div className="flex justify-between items-center mb-4">
+						{date && (
+							<span className="text-sm font-medium text-gray-500 uppercase">
+								{date}
+							</span>
+						)}
+						{location && (
+							<span className="text-sm font-medium text-gray-700">
+								{location}
+							</span>
+						)}
 					</div>
+					<h4 className="mb-2 text-2xl font-bold text-gray-400">{title}</h4>
+					<div className="text-white">{children}</div>
 				</div>
 			</Link>
 		);

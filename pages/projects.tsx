@@ -28,7 +28,7 @@ const Projects: FC<Props> = ({ projects }) => {
       <h1></h1>
       <h3 id="title">Projects</h3>
       <br />
-      <div className="">
+      <div className="flex flex-wrap items-start">
         {projects.map((project) => (
           <CardLink
             href={`/projects/${project.slug}`}
