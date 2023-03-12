@@ -103,7 +103,7 @@ const Activity: FC<{ activity: Activity; time: number }> = ({
         />
         <img
           src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}`}
-          className="absolute right-0 bottom-0 w-5/12"
+          className="absolute right-0 bottom-0 w-5/12 rounded-full"
           alt={activity.assets.small_text}
         />
       </div>

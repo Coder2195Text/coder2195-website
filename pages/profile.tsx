@@ -1,6 +1,5 @@
 import { Tooltip } from "@material-tailwind/react";
 import { NextSeo } from "next-seo";
-import Image from "next/image";
 import React, { FC } from "react";
 import { SiNextdotjs, SiPrisma, SiRust } from "react-icons/si";
 import Layout from "../components/Layout";
@@ -145,14 +144,7 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
 								{typeof icon.src !== "string" ? (
 									icon.src
 								) : (
-									<Image
-										className="inline-block"
-										height={64}
-										width={64}
-										src={icon.src}
-										alt={icon.name}
-										priority
-									/>
+									<img className="inline h-16" src={icon.src} alt={icon.name} />
 								)}
 							</span>
 						</Tooltip>
@@ -164,19 +156,12 @@ const PROFILE_SECTIONS: { [key: string]: JSX.Element } = {
 			{Object.keys(TOOLS_EXPERIENCE).map((level) => (
 				<div key={level}>
 					{TOOLS_EXPERIENCE[level].map((icon) => (
-						<Tooltip content={icon.name}>
+						<Tooltip content={icon.name} key={icon.name}>
 							<span key={icon.name}>
 								{typeof icon.src !== "string" ? (
 									icon.src
 								) : (
-									<Image
-										width={64}
-										height={64}
-										src={icon.src}
-										alt={icon.name}
-										className="inline-block"
-										priority
-									/>
+									<img className="inline h-16" src={icon.src} alt={icon.name} />
 								)}
 							</span>
 						</Tooltip>
