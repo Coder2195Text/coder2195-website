@@ -70,9 +70,8 @@ const NavBar: FC<{ highlight: string }> = ({ highlight }) => {
 				>
 					<Link
 						href={link}
-						className={`text-blue-gray-100 before:bg-blue-gray-100 m-auto ${
-							link == highlight ? "before:scale-x-100" : undefined
-						}`}
+						className={`text-blue-gray-100 before:bg-blue-gray-100 m-auto ${link == highlight ? "before:scale-x-100" : undefined
+							}`}
 						onClick={(e) => {
 							if (link == highlight) {
 								e.preventDefault();
